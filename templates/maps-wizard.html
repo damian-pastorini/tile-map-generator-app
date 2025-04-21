@@ -8,10 +8,8 @@
             enctype="multipart/form-data">
             <input type="hidden" name="mainAction" id="mainAction" value="generate"/>
             <div class="main-action-container">
-                <p class="alert"><strong>IMPORTANT: all files are removed from the server every hour.</strong></p>
-                <p>Note: because of the above, if you like to use the sample generator data, you will still need to download the example files for each case and use the files in the form below.</p>
-                <p>Since this is the same Tile Map Generator used for <a target="_blank" href="https://www.reldens.com/">Reldens</a>, you can <a href="https://gitbook.reldens.com/maps-wizard" target="_blank">check the official documentation</a> on how each of the options below works.</p>
-                <p>What would you like to do?</p>
+                <p class="text-center">Since this is the same Tile Map Generator used for <a target="_blank" href="https://www.reldens.com/">Reldens</a>, you can <a href="https://gitbook.reldens.com/maps-wizard" target="_blank">check the official documentation</a> on how each of the options below works.</p>
+                <h3 class="select-option">What would you like to do?</h3>
                 <ul class="wizard-options-container">
                     <li class="wizard-option-container active">
                         <div class="checkbox-container">
@@ -21,6 +19,7 @@
                             </label>
                         </div>
                         <div class="maps-wizard-option-content mapsWizardAction-1-data">
+                            <img data-toggle="modal" class="sample-image" src="/assets/sample-001.png" alt="Sample single map"/>
                             <p>
                                 Generator Data example:<br/>
                                 <a href="https://github.com/damian-pastorini/tile-map-generator/blob/master/examples/layer-elements-object/map-data.json" target="_blank">
@@ -65,6 +64,7 @@
                             </label>
                         </div>
                         <div class="maps-wizard-option-content mapsWizardAction-2-data">
+                            <img data-toggle="modal" class="sample-image" src="/assets/sample-002.png" alt="Sample single map"/>
                             <p>
                                 Generator Data example:<br/>
                                 <a href="https://github.com/damian-pastorini/tile-map-generator/blob/master/examples/layer-elements-composite/map-composite-data.json" target="_blank">
@@ -103,8 +103,8 @@
                             </p>
                             <p>
                                 Note:<br/>
-                                In this case as you can see we have a single tile map JSON file which contains several tilesets with different images.<br/>
-                                All the original contents are 16x16 pixels, so you can see we set "factor: 2" in the sample params to run the optimizer and get 32x32 pixels tiles in the result.
+                                In this case, as you can see, we have a single tile map JSON file which contains several tilesets with different images.<br/>
+                                All the original contents are 16x16 pixels, so you can see we set "factor: 2" in the sample params to run the optimizer and get tiles of 32x32 pixels in the result.
                             </p>
                         </div>
                     </li>
@@ -116,6 +116,7 @@
                             </label>
                         </div>
                         <div class="maps-wizard-option-content mapsWizardAction-3-data">
+                            <img data-toggle="modal" class="sample-image" src="/assets/sample-002.png" alt="Sample single map"/>
                             <p>
                                 Generator Data example:<br/>
                                 <a href="https://github.com/damian-pastorini/tile-map-generator/blob/master/examples/layer-elements-composite/map-composite-data.json" target="_blank">
@@ -166,6 +167,7 @@
                             </label>
                         </div>
                         <div class="maps-wizard-option-content mapsWizardAction-4-data">
+                            <img data-toggle="modal" class="sample-image" src="/assets/sample-002.png" alt="Sample single map"/>
                             <p>
                                 Generator Data example:<br/>
                                 <a href="https://github.com/damian-pastorini/tile-map-generator/blob/master/examples/layer-elements-composite/map-composite-data.json" target="_blank">
@@ -213,14 +215,20 @@
                     </li>
                 </ul>
                 <hr/>
-                <p>NOTE: if you already uploaded all your files and never manually removed them from the "generate-data" folder, you don't need to upload the same files again.</p>
-                <div class="input-box">
-                    <label for="generatorImages">Images</label>
-                    <input type="file" name="generatorImages" id="generatorImages" multiple="multiple"/>
-                </div>
-                <div class="input-box">
-                    <label for="generatorJsonFiles">JSON Files</label>
-                    <input type="file" name="generatorJsonFiles" id="generatorJsonFiles" multiple="multiple"/>
+                <div class="text-center">
+                    <p class="alert"><strong>IMPORTANT: All uploaded files are deleted from the server every hour.</strong></p>
+                    <p>Note: Because of this hourly cleanup, you can submit the form again within the same hour without re‑uploading your files.
+                        <br/>If you want to use the sample generator data, you still need to download the example files for each case and attach them in the form below.
+                        <br/>After the hour resets, you’ll need to upload the files again.
+                    </p>
+                    <div class="input-box">
+                        <label for="generatorImages">Images</label>
+                        <input type="file" name="generatorImages" id="generatorImages" multiple="multiple"/>
+                    </div>
+                    <div class="input-box">
+                        <label for="generatorJsonFiles">JSON Files</label>
+                        <input type="file" name="generatorJsonFiles" id="generatorJsonFiles" multiple="multiple"/>
+                    </div>
                 </div>
                 <hr/>
                 <label for="generatorData">Generator data:</label>
