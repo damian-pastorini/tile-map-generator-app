@@ -1,0 +1,63 @@
+<h2>Maps Wizard</h2>
+<div class="sub-content maps-wizard">
+    <div class="sub-content-box">
+        <div class="sub-content-form maps-wizard-form confirmation-required" id="maps-wizard-form">
+            <div class="main-action-container maps-selection">
+                <ul class="wizard-options-container">
+                {{#maps}}
+                    <li class="wizard-map-option-container">
+                        <div class="selector-box">
+                            <div class="main-option">
+                                {{&key}}
+                            </div>
+                            <p>Downloads:</p>
+                            <p>
+                                - <a href="{{&mapJson}}" target="_blank">{{&mapJson}}</a><br/>
+                                - <a href="{{&mapImage}}" target="_blank">{{&mapImage}}</a>
+                            </p>
+                        </div>
+                        <canvas
+                            class="mapCanvas"
+                            data-toggle="modal"
+                            width="{{&mapWidth}}"
+                            height="{{&mapHeight}}"
+                            data-tile-width="{{&tileWidth}}"
+                            data-tile-height="{{&tileHeight}}"
+                            data-image-key="{{&mapImage}}"
+                            data-map-json="{{&mapJson}}">
+                        </canvas>
+                        {{#hasSubMaps}}
+                            <div class="sub-maps">
+                                <p class="sub-map-option-description clickable" data-expand-collapse=".sub-maps-container-{{&key}}">
+                                    <img class="icon-sm" src="/assets/admin/filters.png" alt="Associated maps"/>
+                                    <span>Associated maps generated</span>
+                                </p>
+                                <div class="sub-maps-container sub-maps-container-{{&key}} hidden">
+                                    {{#subMaps}}
+                                        <p>{{&key}}</p>
+                                        <p>Downloads:</p>
+                                        <p>
+                                            - <a href="{{&mapJson}}" target="_blank">{{&mapJson}}</a><br/>
+                                            - <a href="{{&mapImage}}" target="_blank">{{&mapImage}}</a>
+                                        </p>
+                                        <canvas
+                                            class="mapCanvas"
+                                            data-toggle="modal"
+                                            width="{{&mapWidth}}"
+                                            height="{{&mapHeight}}"
+                                            data-tile-width="{{&tileWidth}}"
+                                            data-tile-height="{{&tileHeight}}"
+                                            data-image-key="{{&mapImage}}"
+                                            data-map-json="{{&mapJson}}">
+                                        </canvas>
+                                    {{/subMaps}}
+                                </div>
+                            </div>
+                        {{/hasSubMaps}}
+                    </li>
+                {{/maps}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
