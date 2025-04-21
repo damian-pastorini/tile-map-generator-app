@@ -8,14 +8,16 @@
             enctype="multipart/form-data">
             <input type="hidden" name="mainAction" id="mainAction" value="generate"/>
             <div class="main-action-container">
-                <p class="danger"><strong>IMPORTANT: all files are removed from the server every hour.</strong></p>
+                <p class="alert"><strong>IMPORTANT: all files are removed from the server every hour.</strong></p>
+                <p>Note: because of the above, if you like to use the sample generator data, you will still need to download the example files for each case and use the files in the form below.</p>
+                <p>Since this is the same Tile Map Generator used for <a target="_blank" href="https://www.reldens.com/">Reldens</a>, you can <a href="https://gitbook.reldens.com/maps-wizard" target="_blank">check the official documentation</a> on how each of the options below works.</p>
                 <p>What would you like to do?</p>
                 <ul class="wizard-options-container">
                     <li class="wizard-option-container active">
                         <div class="checkbox-container">
                             <input class="map-wizard-option with-state" type="radio" name="mapsWizardAction" id="mapsWizardAction-1" value="elements-object-loader" checked="checked"/>
                             <label class="main-option" for="mapsWizardAction-1">
-                                Generate a SINGLE random map with Layer Elements Object Loader (LayerElementsObjectLoader)
+                                Generate a SINGLE random map using single elements JSON files (LayerElementsObjectLoader)
                             </label>
                         </div>
                         <div class="maps-wizard-option-content mapsWizardAction-1-data">
@@ -59,7 +61,7 @@
                         <div class="checkbox-container">
                             <input class="map-wizard-option with-state" type="radio" name="mapsWizardAction" id="mapsWizardAction-2" value="elements-composite-loader"/>
                             <label class="main-option" for="mapsWizardAction-2">
-                                Generate a SINGLE random map with Layer Elements Composite Loader (LayerElementsCompositeLoader)
+                                Generate a SINGLE random map using a single JSON file that will contain all the elements with the information set on the map file properties (LayerElementsCompositeLoader)
                             </label>
                         </div>
                         <div class="maps-wizard-option-content mapsWizardAction-2-data">
@@ -110,7 +112,7 @@
                         <div class="checkbox-container">
                             <input class="map-wizard-option with-state" type="radio" name="mapsWizardAction" id="mapsWizardAction-3" value="multiple-by-loader"/>
                             <label class="main-option" for="mapsWizardAction-3">
-                                Generate MULTIPLE random maps by Multiple Loader (MultipleByLoaderGenerator)
+                                Generate MULTIPLE random maps using a JSON file for the options and another for the elements (MultipleByLoaderGenerator)
                             </label>
                         </div>
                         <div class="maps-wizard-option-content mapsWizardAction-3-data">
@@ -160,7 +162,7 @@
                         <div class="checkbox-container">
                             <input class="map-wizard-option with-state" type="radio" name="mapsWizardAction" id="mapsWizardAction-4" value="multiple-with-association-by-loader"/>
                             <label class="main-option" for="mapsWizardAction-4">
-                                Generate MULTIPLE random maps with Layer Elements Composite Loader (MultipleWithAssociationsByLoaderGenerator)
+                                Generate MULTIPLE random maps with a JSON file for the options and another for the elements and with sub-maps (MultipleWithAssociationsByLoaderGenerator)
                             </label>
                         </div>
                         <div class="maps-wizard-option-content mapsWizardAction-4-data">
