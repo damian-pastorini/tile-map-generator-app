@@ -31,7 +31,7 @@ class ReldensTileMapGeneratorApp
             return this.mapsWizardManager.contents['mapsWizard'];
         });
         await this.mapsWizardManager.setupRoutes(this.app);
-        await this.appServer.listen(8080);
+        await this.appServer.listen(8085);
         this.activateFilesRemoval();
     }
 
@@ -73,7 +73,7 @@ const tileMapGeneratorApp = new ReldensTileMapGeneratorApp();
 
 tileMapGeneratorApp.start().then(() => {
     console.log('Reldens - Tile Map Generator App - Started');
-    console.log('Listening at http://localhost:8080');
+    console.log('Listening at http://localhost:8085');
 }).catch((error) => {
     console.error(error);
 });
