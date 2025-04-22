@@ -63,6 +63,10 @@
         }
     }
 
+    .reldens {
+        color: #2f7dde;
+    }
+
     .sample-image {
         max-width: 100%;
         margin: 1rem 0;
@@ -435,7 +439,7 @@
         }
 
         .wizard-option-container.active {
-            background-color: #dedede;
+            background-color: #d6e7ff;
         }
 
         .maps-wizard-form {
