@@ -176,57 +176,13 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function calculateTileData(event, data)
-    {
-        let positionX = event.offsetX;
-        let positionY = event.offsetY;
-        let tileCol = Math.floor(positionX / data.tilewidth);
-        let tileRow = Math.floor(positionY / data.tileheight);
-        let positionTileX = (tileCol * data.tilewidth) + (data.tilewidth / 2);
-        let positionTileY = (tileRow * data.tileheight) + (data.tileheight / 2);
-        let cols = data.width;
-        let rows = data.height;
-        let tileIndex = tileRow * cols + tileCol;
-        return {tileCol, tileRow, positionTileX, positionTileY, tileIndex, positionX, positionY, cols, rows};
-    }
-
     // error codes messages map:
     let errorMessages = {
-        saveBadPatchData: 'Bad patch data on update.',
-        saveEntityStorageError: 'Entity storage error.',
-        saveEntityError: 'Entity could not be saved.',
-        shutdownError: 'Server could not be shutdown, missing "shutdownTime".',
-        mapsWizardImportDataError: 'Map could not be imported, missing generated map data.',
-        mapsWizardImportError: 'Map could not be imported.',
-        objectsImportMissingDataError: 'Object could not be imported, missing JSON files.',
-        objectsImportDataError: 'Object could not be imported, missing data in JSON files.',
-        objectsImportError: 'Object could not be imported.',
-        skillsImportMissingDataError: 'Skills could not be imported, missing JSON files.',
-        skillsImportDataError: 'Skills could not be imported, missing data in JSON files.',
-        skillsImportError: 'Skills could not be imported.',
-        errorView: 'Could not render view page.',
-        errorEdit: 'Could not render edit page.',
-        errorId: 'Missing entity ID on POST.',
-        errorMissingTileIndex: 'Missing tile index to create change point.',
-        errorMissingNextRoom: 'Missing next room selection.',
-        errorMissingRoomX: 'Missing return point X.',
-        errorMissingRoomY: 'Missing return point Y.',
-        errorSaveChangePoint: 'Error saving change point.',
-        errorSaveReturnPoint: 'Error saving return point.',
+        mapsWizardMissingActionError: 'Missing action.',
+        mapsWizardMissingDataError: 'Missing data.',
+        mapsWizardWrongJsonDataError: 'Invalid JSON data provided.',
+        mapsWizardMissingHandlerError: 'Invalid or missing handler selected.'
     };
-
-    // activate expand/collapse elements
-    let expandCollapseButtons = document.querySelectorAll('[data-expand-collapse]');
-    if(expandCollapseButtons){
-        for(let expandCollapseButton of expandCollapseButtons){
-            expandCollapseButton.addEventListener('click', (event) => {
-                let expandCollapseElement = document.querySelector(event.currentTarget.dataset.expandCollapse);
-                if(expandCollapseElement){
-                    expandCollapseElement.classList.toggle('hidden');
-                }
-            });
-        }
-    }
 
     // activate modals on click
     let modalElements = document.querySelectorAll('[data-toggle="modal"]');
@@ -301,14 +257,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // maps wizard functions:
     let mapsWizardsOptions = document.querySelectorAll('.maps-wizard-form .map-wizard-option.with-state');
-    for(let option of mapsWizardsOptions){
-        option.addEventListener('click', (event) => {
-            let wizardOptionsContainer = document.querySelectorAll('.wizard-option-container');
-            for(let container of wizardOptionsContainer){
-                container.classList.remove('active');
-            }
-            event.currentTarget.parentNode.parentNode.classList.add('active');
-        });
+    if(mapsWizardsOptions){
+        for(let option of mapsWizardsOptions){
+            option.addEventListener('click', (event) => {
+                let wizardOptionsContainer = document.querySelectorAll('.wizard-option-container');
+                for(let container of wizardOptionsContainer){
+                    container.classList.remove('active');
+                }
+                event.currentTarget.parentNode.parentNode.classList.add('active');
+            });
+        }
+    }
+
+    // activate option on container click:
+    let wizardOptions = document.querySelectorAll('.wizard-option-container');
+    if(wizardOptions){
+        for(let wizardOption of wizardOptions){
+            wizardOption.addEventListener('click', function(){
+                wizardOption.querySelector('input.map-wizard-option').click();
+            });
+        }
     }
 
     let mapCanvasElements = document.querySelectorAll('.mapCanvas');
