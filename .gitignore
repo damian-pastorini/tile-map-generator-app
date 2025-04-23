@@ -20,6 +20,6 @@ node_modules/
 /test
 /dev
 **/generate-data/**/*.png
-**/generated-data/**/*.json
+**/generate-data/**/*.json
 **/generated/**/*.png
 **/generated/**/*.json

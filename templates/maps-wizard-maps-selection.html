@@ -3,14 +3,15 @@
     <div class="sub-content-box">
         <div class="sub-content-form maps-wizard-form confirmation-required" id="maps-wizard-form">
             <div class="main-action-container maps-selection">
+                <p class="text-center alert">Refresh the page to get a new map using the same config (this will work until the hourly files clean up).</p>
                 <ul class="wizard-options-container">
                 {{#maps}}
                     <li class="wizard-map-option-container">
                         <div class="selector-box">
                             <div class="main-option">
-                                {{&key}}
+                                Created map: {{&key}}
                             </div>
-                            <p>Downloads:</p>
+                            <p>Download your map files:</p>
                             <p>
                                 - <a href="{{&mapJson}}" target="_blank">{{&mapJson}}</a><br/>
                                 - <a href="{{&mapImage}}" target="_blank">{{&mapImage}}</a>
