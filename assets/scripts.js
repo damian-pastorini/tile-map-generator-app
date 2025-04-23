@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
         return element.cloneNode(true);
     }
 
-    function fetchMapFileAndDraw(mapJson, tileset, mapCanvas, withTileHighlight, tileClickCallback)
+    function fetchMapFileAndDraw(mapJson, tileset, mapCanvas, withDrawTiles, withTileHighlight, tileClickCallback)
     {
         if(!mapJson){
             return false;
@@ -57,7 +57,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 mapCanvas.height = data.height * data.tileheight;
                 let mapCanvasContext = mapCanvas.getContext('2d');
                 drawMap(mapCanvasContext, tileset, data);
-                drawTiles(mapCanvasContext, mapCanvas.width, mapCanvas.height, data.tilewidth, data.tileheight);
+                if(withDrawTiles){
+                    drawTiles(mapCanvasContext, mapCanvas.width, mapCanvas.height, data.tilewidth, data.tileheight);
+                }
                 if(withTileHighlight){
                     mapCanvas.addEventListener('mousemove', (event) => {
                         let mouseX = event.offsetX;
@@ -160,7 +162,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     '/assets/maps/' + mapJsonFileName,
                     tileset,
                     mapCanvas,
-                    true,
+                    false,
+                    false,
                     tileClickCallback
                 );
             };
@@ -597,19 +600,6 @@ window.addEventListener('DOMContentLoaded', () => {
         generatorDataElement.addEventListener('input', () => {
             updateInputsFromGeneratorData();
         });
-    }
-
-    let configTitles = document.querySelectorAll('.config-container h4, .common-config-container h4');
-    if(configTitles){
-        for(let title of configTitles){
-            title.classList.add('clickable');
-            title.addEventListener('click', () => {
-                let container = title.closest('.config-container') || title.closest('.common-config-container');
-                if(container){
-                    container.classList.toggle('active');
-                }
-            });
-        }
     }
 
 });

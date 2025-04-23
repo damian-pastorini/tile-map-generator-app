@@ -52,71 +52,99 @@
                             </p>
                         </div>
                         <div class="config-container config-option-1">
-                            <h4>Configuration Options</h4>
+                            <h4 class="clickable">Configuration Options</h4>
                             <div class="config-grid">
                                 <div class="config-item">
-                                    <label for="tileSize-1">Tile Size:</label>
+                                    <label for="tileSize-1">Tile Size: <span class="tooltip">?<span class="tooltip-text">Size of each tile in pixels</span></span></label>
                                     <input type="number" id="tileSize-1" name="tileSize-1" class="config-input" data-option="elements-object-loader" data-property="tileSize" value="32">
                                 </div>
                                 <div class="config-item">
-                                    <label for="tileSheetPath-1">Tile Sheet Path:</label>
+                                    <label for="tileSheetPath-1">Tile Sheet Path: <span class="tooltip">?<span class="tooltip-text">Path to the tileset image file</span></span></label>
                                     <input type="text" id="tileSheetPath-1" name="tileSheetPath-1" class="config-input" data-option="elements-object-loader" data-property="tileSheetPath" value="tilesheet.png">
                                 </div>
                                 <div class="config-item">
-                                    <label for="tileSheetName-1">Tile Sheet Name:</label>
+                                    <label for="tileSheetName-1">Tile Sheet Name: <span class="tooltip">?<span class="tooltip-text">Name of the tileset image file</span></span></label>
                                     <input type="text" id="tileSheetName-1" name="tileSheetName-1" class="config-input" data-option="elements-object-loader" data-property="tileSheetName" value="tilesheet.png">
                                 </div>
                                 <div class="config-item">
-                                    <label for="imageHeight-1">Image Height:</label>
+                                    <label for="imageHeight-1">Image Height: <span class="tooltip">?<span class="tooltip-text">Height of the tileset image in pixels</span></span></label>
                                     <input type="number" id="imageHeight-1" name="imageHeight-1" class="config-input" data-option="elements-object-loader" data-property="imageHeight" value="578">
                                 </div>
                                 <div class="config-item">
-                                    <label for="imageWidth-1">Image Width:</label>
+                                    <label for="imageWidth-1">Image Width: <span class="tooltip">?<span class="tooltip-text">Width of the tileset image in pixels</span></span></label>
                                     <input type="number" id="imageWidth-1" name="imageWidth-1" class="config-input" data-option="elements-object-loader" data-property="imageWidth" value="612">
                                 </div>
                                 <div class="config-item">
-                                    <label for="tileCount-1">Tile Count:</label>
+                                    <label for="tileCount-1">Tile Count: <span class="tooltip">?<span class="tooltip-text">Total number of tiles in the tileset</span></span></label>
                                     <input type="number" id="tileCount-1" name="tileCount-1" class="config-input" data-option="elements-object-loader" data-property="tileCount" value="306">
                                 </div>
                                 <div class="config-item">
-                                    <label for="columns-1">Columns:</label>
+                                    <label for="columns-1">Columns: <span class="tooltip">?<span class="tooltip-text">Number of columns in the tileset</span></span></label>
                                     <input type="number" id="columns-1" name="columns-1" class="config-input" data-option="elements-object-loader" data-property="columns" value="18">
                                 </div>
                                 <div class="config-item">
-                                    <label for="margin-1">Margin:</label>
+                                    <label for="margin-1">Margin: <span class="tooltip">?<span class="tooltip-text">Margin in pixels of the tileset image</span></span></label>
                                     <input type="number" id="margin-1" name="margin-1" class="config-input" data-option="elements-object-loader" data-property="margin" value="1">
                                 </div>
                                 <div class="config-item">
-                                    <label for="spacing-1">Spacing:</label>
+                                    <label for="spacing-1">Spacing: <span class="tooltip">?<span class="tooltip-text">Spacing between tiles in pixels</span></span></label>
                                     <input type="number" id="spacing-1" name="spacing-1" class="config-input" data-option="elements-object-loader" data-property="spacing" value="2">
                                 </div>
                                 <div class="config-item">
-                                    <label for="groundTile-1">Ground Tile:</label>
+                                    <label for="groundTile-1">Ground Tile: <span class="tooltip">?<span class="tooltip-text">Tile index to use for the ground</span></span></label>
                                     <input type="number" id="groundTile-1" name="groundTile-1" class="config-input" data-option="elements-object-loader" data-property="groundTile" value="116">
                                 </div>
                                 <div class="config-item">
-                                    <label for="pathTile-1">Path Tile:</label>
+                                    <label for="pathTile-1">Path Tile: <span class="tooltip">?<span class="tooltip-text">Tile index to use for paths between elements</span></span></label>
                                     <input type="number" id="pathTile-1" name="pathTile-1" class="config-input" data-option="elements-object-loader" data-property="pathTile" value="121">
                                 </div>
                                 <div class="config-item">
-                                    <label for="randomGroundTiles-1">Random Ground Tiles (comma separated):</label>
+                                    <label for="randomGroundTiles-1">Random Ground Tiles (comma separated): <span class="tooltip">?<span class="tooltip-text">Tile indexes to use for random ground variations</span></span></label>
                                     <input type="text" id="randomGroundTiles-1" name="randomGroundTiles-1" class="config-input" data-option="elements-object-loader" data-property="randomGroundTiles" value="26,27,28,29,30,36,37,38,39,50,51,52,53">
                                 </div>
                                 <div class="config-item">
-                                    <label for="elementsQuantity-1">Elements Quantity (JSON):</label>
+                                    <label for="elementsQuantity-1">Elements Quantity (JSON): <span class="tooltip">?<span class="tooltip-text">Number of each element type to place on the map</span></span></label>
                                     <textarea id="elementsQuantity-1" name="elementsQuantity-1" class="config-input" data-option="elements-object-loader" data-property="elementsQuantity" rows="4">{"house1": 3, "house2": 2, "tree": 6}</textarea>
                                 </div>
                                 <div class="config-item">
-                                    <label for="surroundingTiles-1">Surrounding Tiles (JSON):</label>
+                                    <label for="elementsFreeSpaceAround-1">Elements Free Space Around (JSON): <span class="tooltip">?<span class="tooltip-text">Amount of free space to leave around specific elements</span></span></label>
+                                    <textarea id="elementsFreeSpaceAround-1" name="elementsFreeSpaceAround-1" class="config-input" data-option="elements-object-loader" data-property="elementsFreeSpaceAround" rows="4">{}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="elementsAllowPathsInFreeSpace-1">Elements Allow Paths In Free Space (JSON): <span class="tooltip">?<span class="tooltip-text">Whether paths can cross through the free space around specific elements</span></span></label>
+                                    <textarea id="elementsAllowPathsInFreeSpace-1" name="elementsAllowPathsInFreeSpace-1" class="config-input" data-option="elements-object-loader" data-property="elementsAllowPathsInFreeSpace" rows="4">{}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="mapCenteredElements-1">Map Centered Elements (JSON): <span class="tooltip">?<span class="tooltip-text">Elements to place at the center of the map with priority values</span></span></label>
+                                    <textarea id="mapCenteredElements-1" name="mapCenteredElements-1" class="config-input" data-option="elements-object-loader" data-property="mapCenteredElements" rows="4">{}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="surroundingTiles-1">Surrounding Tiles (JSON): <span class="tooltip">?<span class="tooltip-text">Tile IDs to use for path borders in different positions</span></span></label>
                                     <textarea id="surroundingTiles-1" name="surroundingTiles-1" class="config-input" data-option="elements-object-loader" data-property="surroundingTiles" rows="4">{"-1,-1": 127, "-1,0": 124, "-1,1": 130, "0,-1": 126, "0,1": 129, "1,-1": 132, "1,0": 131, "1,1": 133}</textarea>
                                 </div>
                                 <div class="config-item">
-                                    <label for="corners-1">Corners (JSON):</label>
+                                    <label for="corners-1">Corners (JSON): <span class="tooltip">?<span class="tooltip-text">Tile IDs to use for corner tiles</span></span></label>
                                     <textarea id="corners-1" name="corners-1" class="config-input" data-option="elements-object-loader" data-property="corners" rows="4">{"-1,-1": 285, "-1,1": 284, "1,-1": 283, "1,1": 282}</textarea>
                                 </div>
                                 <div class="config-item">
-                                    <label for="layerElementsFiles-1">Layer Elements Files (JSON):</label>
+                                    <label for="layerElementsFiles-1">Layer Elements Files (JSON): <span class="tooltip">?<span class="tooltip-text">Define the element JSON files to use for each element type</span></span></label>
                                     <textarea id="layerElementsFiles-1" name="layerElementsFiles-1" class="config-input" data-option="elements-object-loader" data-property="layerElementsFiles" rows="4">{"house1": "house-001.json", "house2": "house-002.json", "tree": "tree.json"}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="bordersTiles-1">Borders Tiles (JSON): <span class="tooltip">?<span class="tooltip-text">Tile IDs to use for each border direction (top, right, bottom, left)</span></span></label>
+                                    <textarea id="bordersTiles-1" name="bordersTiles-1" class="config-input" data-option="elements-object-loader" data-property="bordersTiles" rows="4">{"top": 0, "right": 0, "bottom": 0, "left": 0}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="borderCornersTiles-1">Border Corners Tiles (JSON): <span class="tooltip">?<span class="tooltip-text">Tile IDs to use for border corners</span></span></label>
+                                    <textarea id="borderCornersTiles-1" name="borderCornersTiles-1" class="config-input" data-option="elements-object-loader" data-property="borderCornersTiles" rows="4">{"top-left": 0, "top-right": 0, "bottom-left": 0, "bottom-right": 0}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="groundSpots-1">Ground Spots (JSON): <span class="tooltip">?<span class="tooltip-text">Define special areas with different ground tiles</span></span></label>
+                                    <textarea id="groundSpots-1" name="groundSpots-1" class="config-input" data-option="elements-object-loader" data-property="groundSpots" rows="4">{}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="mapSize-1">Map Size (JSON): <span class="tooltip">?<span class="tooltip-text">Define fixed width and height for the map</span></span></label>
+                                    <textarea id="mapSize-1" name="mapSize-1" class="config-input" data-option="elements-object-loader" data-property="mapSize" rows="4">{"mapWidth": 0, "mapHeight": 0}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -169,10 +197,10 @@
                             </p>
                         </div>
                         <div class="config-container config-option-2">
-                            <h4>Configuration Options</h4>
+                            <h4 class="clickable">Configuration Options</h4>
                             <div class="config-grid">
                                 <div class="config-item">
-                                    <label for="compositeElementsFile-2">Composite Elements File:</label>
+                                    <label for="compositeElementsFile-2">Composite Elements File: <span class="tooltip">?<span class="tooltip-text">JSON file containing all map elements definitions</span></span></label>
                                     <input type="text" id="compositeElementsFile-2" name="compositeElementsFile-2" class="config-input" data-option="elements-composite-loader" data-property="compositeElementsFile" value="reldens-town-composite.json">
                                 </div>
                             </div>
@@ -225,14 +253,14 @@
                             </p>
                         </div>
                         <div class="config-container config-option-3">
-                            <h4>Configuration Options</h4>
+                            <h4 class="clickable">Configuration Options</h4>
                             <div class="config-grid">
                                 <div class="config-item">
-                                    <label for="mapNames-3">Map Names (comma separated):</label>
+                                    <label for="mapNames-3">Map Names (comma separated): <span class="tooltip">?<span class="tooltip-text">Names of the maps to generate</span></span></label>
                                     <input type="text" id="mapNames-3" name="mapNames-3" class="config-input" data-option="multiple-by-loader" data-property="mapNames" value="map-001,map-002,map-003">
                                 </div>
                                 <div class="config-item">
-                                    <label for="compositeElementsFile-3">Composite Elements File:</label>
+                                    <label for="compositeElementsFile-3">Composite Elements File: <span class="tooltip">?<span class="tooltip-text">JSON file containing all map elements definitions</span></span></label>
                                     <input type="text" id="compositeElementsFile-3" name="compositeElementsFile-3" class="config-input" data-option="multiple-by-loader" data-property="compositeElementsFile" value="reldens-town-composite.json">
                                 </div>
                             </div>
@@ -288,19 +316,31 @@
                             </p>
                         </div>
                         <div class="config-container config-option-4">
-                            <h4>Configuration Options</h4>
+                            <h4 class="clickable">Configuration Options</h4>
                             <div class="config-grid">
                                 <div class="config-item">
-                                    <label for="compositeElementsFile-4">Composite Elements File:</label>
+                                    <label for="compositeElementsFile-4">Composite Elements File: <span class="tooltip">?<span class="tooltip-text">JSON file containing all map elements definitions</span></span></label>
                                     <input type="text" id="compositeElementsFile-4" name="compositeElementsFile-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="compositeElementsFile" value="reldens-town-composite-with-associations.json">
                                 </div>
                                 <div class="config-item">
-                                    <label for="mapsInformation-4">Maps Information (JSON):</label>
+                                    <label for="mapsInformation-4">Maps Information (JSON): <span class="tooltip">?<span class="tooltip-text">Information about maps to generate</span></span></label>
                                     <textarea id="mapsInformation-4" name="mapsInformation-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="mapsInformation" rows="4">[{"mapName": "town-001", "mapTitle": "Town 1"}, {"mapName": "town-002", "mapTitle": "Town 2"}, {"mapName": "town-003", "mapTitle": "Town 3"}, {"mapName": "town-004", "mapTitle": "Town 4"}]</textarea>
                                 </div>
                                 <div class="config-item">
-                                    <label for="associationsProperties-4">Associations Properties (JSON):</label>
+                                    <label for="associationsProperties-4">Associations Properties (JSON): <span class="tooltip">?<span class="tooltip-text">Properties for map associations</span></span></label>
                                     <textarea id="associationsProperties-4" name="associationsProperties-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="associationsProperties" rows="4">{"generateElementsPath": false, "blockMapBorder": true, "freeSpaceTilesQuantity": 0, "variableTilesPercentage": 0, "placeElementsOrder": "inOrder", "orderElementsBySize": false, "randomizeQuantities": true, "applySurroundingPathTiles": false, "automaticallyExtrudeMaps": true}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="entryPosition-4">Entry Position: <span class="tooltip">?<span class="tooltip-text">Position for map entries (e.g., "top-middle")</span></span></label>
+                                    <input type="text" id="entryPosition-4" name="entryPosition-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="entryPosition" value="">
+                                </div>
+                                <div class="config-item">
+                                    <label for="entryPositionFrom-4">Entry Position From: <span class="tooltip">?<span class="tooltip-text">Origin point for entry position</span></span></label>
+                                    <input type="text" id="entryPositionFrom-4" name="entryPositionFrom-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="entryPositionFrom" value="">
+                                </div>
+                                <div class="config-item">
+                                    <label for="entryPositionSize-4">Entry Position Size: <span class="tooltip">?<span class="tooltip-text">Width of entry point in tiles</span></span></label>
+                                    <input type="number" id="entryPositionSize-4" name="entryPositionSize-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="entryPositionSize" value="0">
                                 </div>
                             </div>
                         </div>
@@ -310,37 +350,230 @@
                     <h4>Common Configuration Options</h4>
                     <div class="config-grid">
                         <div class="config-item">
-                            <label for="factor-common">Factor:</label>
+                            <label for="factor-common">Factor: <span class="tooltip">?<span class="tooltip-text">Multiplier used to scale the map and elements (2 means elements will be 2x larger)</span></span></label>
                             <input type="number" id="factor-common" name="factor-common" class="config-input" data-option="common" data-property="factor" value="2">
                         </div>
                         <div class="config-item">
-                            <label for="mainPathSize-common">Main Path Size:</label>
+                            <label for="mainPathSize-common">Main Path Size: <span class="tooltip">?<span class="tooltip-text">Size of the main path in tiles</span></span></label>
                             <input type="number" id="mainPathSize-common" name="mainPathSize-common" class="config-input" data-option="common" data-property="mainPathSize" value="3">
                         </div>
                         <div class="config-item">
-                            <label for="blockMapBorder-common">Block Map Border:</label>
+                            <label for="pathSize-common">Path Size: <span class="tooltip">?<span class="tooltip-text">Width of the paths connecting elements in tiles</span></span></label>
+                            <input type="number" id="pathSize-common" name="pathSize-common" class="config-input" data-option="common" data-property="pathSize" value="1">
+                        </div>
+                        <div class="config-item">
+                            <label for="blockMapBorder-common">Block Map Border: <span class="tooltip">?<span class="tooltip-text">When enabled, creates a non-walkable border around the map</span></span></label>
                             <select id="blockMapBorder-common" name="blockMapBorder-common" class="config-input" data-option="common" data-property="blockMapBorder">
                                 <option value="true" selected>Yes</option>
                                 <option value="false">No</option>
                             </select>
                         </div>
                         <div class="config-item">
-                            <label for="freeSpaceTilesQuantity-common">Free Space Tiles Quantity:</label>
+                            <label for="isBorderWalkable-common">Is Border Walkable: <span class="tooltip">?<span class="tooltip-text">When enabled, the border tiles can be walked on</span></span></label>
+                            <select id="isBorderWalkable-common" name="isBorderWalkable-common" class="config-input" data-option="common" data-property="isBorderWalkable">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="borderTile-common">Border Tile: <span class="tooltip">?<span class="tooltip-text">Tile index to use for map borders (if not specified in bordersTiles)</span></span></label>
+                            <input type="number" id="borderTile-common" name="borderTile-common" class="config-input" data-option="common" data-property="borderTile" value="0">
+                        </div>
+                        <div class="config-item">
+                            <label for="freeSpaceTilesQuantity-common">Free Space Tiles Quantity: <span class="tooltip">?<span class="tooltip-text">Number of empty tiles to leave around elements</span></span></label>
                             <input type="number" id="freeSpaceTilesQuantity-common" name="freeSpaceTilesQuantity-common" class="config-input" data-option="common" data-property="freeSpaceTilesQuantity" value="2">
                         </div>
                         <div class="config-item">
-                            <label for="variableTilesPercentage-common">Variable Tiles Percentage:</label>
+                            <label for="minimumElementsFreeSpaceAround-common">Min Free Space Around Elements: <span class="tooltip">?<span class="tooltip-text">Minimum free space to leave around all elements</span></span></label>
+                            <input type="number" id="minimumElementsFreeSpaceAround-common" name="minimumElementsFreeSpaceAround-common" class="config-input" data-option="common" data-property="minimumElementsFreeSpaceAround" value="0">
+                        </div>
+                        <div class="config-item">
+                            <label for="freeSpaceMultiplier-common">Free Space Multiplier: <span class="tooltip">?<span class="tooltip-text">Multiplier for the free space around elements</span></span></label>
+                            <input type="number" id="freeSpaceMultiplier-common" name="freeSpaceMultiplier-common" class="config-input" data-option="common" data-property="freeSpaceMultiplier" value="1">
+                        </div>
+                        <div class="config-item">
+                            <label for="freeTilesMultiplier-common">Free Tiles Multiplier: <span class="tooltip">?<span class="tooltip-text">Multiplier for the free tiles between elements</span></span></label>
+                            <input type="number" id="freeTilesMultiplier-common" name="freeTilesMultiplier-common" class="config-input" data-option="common" data-property="freeTilesMultiplier" value="1">
+                        </div>
+                        <div class="config-item">
+                            <label for="variableTilesPercentage-common">Variable Tiles Percentage: <span class="tooltip">?<span class="tooltip-text">Percentage of ground tiles that will be replaced with random variations</span></span></label>
                             <input type="number" id="variableTilesPercentage-common" name="variableTilesPercentage-common" class="config-input" data-option="common" data-property="variableTilesPercentage" value="15">
                         </div>
                         <div class="config-item">
-                            <label for="collisionLayersForPaths-common">Collision Layers For Paths (comma separated):</label>
+                            <label for="collisionLayersForPaths-common">Collision Layers For Paths: <span class="tooltip">?<span class="tooltip-text">Layer names to check for collisions when generating paths</span></span></label>
                             <input type="text" id="collisionLayersForPaths-common" name="collisionLayersForPaths-common" class="config-input" data-option="common" data-property="collisionLayersForPaths" value="change-points,collisions,tree-base">
                         </div>
                         <div class="config-item">
-                            <label for="automaticallyExtrudeMaps-common">Automatically Extrude Maps:</label>
+                            <label for="minimumDistanceFromBorders-common">Min Distance From Borders: <span class="tooltip">?<span class="tooltip-text">Minimum distance in tiles that elements must be from map borders</span></span></label>
+                            <input type="number" id="minimumDistanceFromBorders-common" name="minimumDistanceFromBorders-common" class="config-input" data-option="common" data-property="minimumDistanceFromBorders" value="1">
+                        </div>
+                        <div class="config-item">
+                            <label for="generateElementsPath-common">Generate Elements Path: <span class="tooltip">?<span class="tooltip-text">Whether to generate paths connecting all elements on the map</span></span></label>
+                            <select id="generateElementsPath-common" name="generateElementsPath-common" class="config-input" data-option="common" data-property="generateElementsPath">
+                                <option value="true" selected>Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="allowPlacePathOverElementsFreeArea-common">Allow Path Over Elements Free Area: <span class="tooltip">?<span class="tooltip-text">Whether paths can be placed in the free space around elements</span></span></label>
+                            <select id="allowPlacePathOverElementsFreeArea-common" name="allowPlacePathOverElementsFreeArea-common" class="config-input" data-option="common" data-property="allowPlacePathOverElementsFreeArea">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="defaultElementsAllowPathsInFreeSpace-common">Default Allow Paths In Free Space: <span class="tooltip">?<span class="tooltip-text">Default setting for whether elements allow paths in their free space</span></span></label>
+                            <select id="defaultElementsAllowPathsInFreeSpace-common" name="defaultElementsAllowPathsInFreeSpace-common" class="config-input" data-option="common" data-property="defaultElementsAllowPathsInFreeSpace">
+                                <option value="true" selected>Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="placeElementsCloserToBorders-common">Place Elements Closer To Borders: <span class="tooltip">?<span class="tooltip-text">Elements will be placed closer to map borders when enabled</span></span></label>
+                            <select id="placeElementsCloserToBorders-common" name="placeElementsCloserToBorders-common" class="config-input" data-option="common" data-property="placeElementsCloserToBorders">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="placeElementsOrder-common">Place Elements Order: <span class="tooltip">?<span class="tooltip-text">How to place elements - randomly or in a specific order</span></span></label>
+                            <select id="placeElementsOrder-common" name="placeElementsOrder-common" class="config-input" data-option="common" data-property="placeElementsOrder">
+                                <option value="random" selected>Random</option>
+                                <option value="inOrder">In Order</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="orderElementsBySize-common">Order Elements By Size: <span class="tooltip">?<span class="tooltip-text">Whether to place larger elements first</span></span></label>
+                            <select id="orderElementsBySize-common" name="orderElementsBySize-common" class="config-input" data-option="common" data-property="orderElementsBySize">
+                                <option value="true" selected>Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="randomizeQuantities-common">Randomize Quantities: <span class="tooltip">?<span class="tooltip-text">Whether to randomize the order of element placement</span></span></label>
+                            <select id="randomizeQuantities-common" name="randomizeQuantities-common" class="config-input" data-option="common" data-property="randomizeQuantities">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="sortPositionsRelativeToTheMapCenter-common">Sort Positions Relative To Map Center: <span class="tooltip">?<span class="tooltip-text">Whether to sort element positions by distance from map center</span></span></label>
+                            <select id="sortPositionsRelativeToTheMapCenter-common" name="sortPositionsRelativeToTheMapCenter-common" class="config-input" data-option="common" data-property="sortPositionsRelativeToTheMapCenter">
+                                <option value="true" selected>Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="mapBackgroundColor-common">Map Background Color: <span class="tooltip">?<span class="tooltip-text">Background color for the map in hex format (e.g., #000000)</span></span></label>
+                            <input type="text" id="mapBackgroundColor-common" name="mapBackgroundColor-common" class="config-input" data-option="common" data-property="mapBackgroundColor" value="#000000">
+                        </div>
+                        <div class="config-item">
+                            <label for="splitBordersInLayers-common">Split Borders In Layers: <span class="tooltip">?<span class="tooltip-text">Whether to put path borders in separate layers from the path itself</span></span></label>
+                            <select id="splitBordersInLayers-common" name="splitBordersInLayers-common" class="config-input" data-option="common" data-property="splitBordersInLayers">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="applySurroundingPathTiles-common">Apply Surrounding Path Tiles: <span class="tooltip">?<span class="tooltip-text">Whether to add decorative border tiles around paths</span></span></label>
+                            <select id="applySurroundingPathTiles-common" name="applySurroundingPathTiles-common" class="config-input" data-option="common" data-property="applySurroundingPathTiles">
+                                <option value="true" selected>Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="applyPathsInnerWalls-common">Apply Paths Inner Walls: <span class="tooltip">?<span class="tooltip-text">Whether to add inner wall decorations to paths</span></span></label>
+                            <select id="applyPathsInnerWalls-common" name="applyPathsInnerWalls-common" class="config-input" data-option="common" data-property="applyPathsInnerWalls">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="pathsInnerWallsTilesKey-common">Paths Inner Walls Tiles Key: <span class="tooltip">?<span class="tooltip-text">Key used to identify inner walls tiles in the tileset</span></span></label>
+                            <input type="text" id="pathsInnerWallsTilesKey-common" name="pathsInnerWallsTilesKey-common" class="config-input" data-option="common" data-property="pathsInnerWallsTilesKey" value="path">
+                        </div>
+                        <div class="config-item">
+                            <label for="applyPathsOuterWalls-common">Apply Paths Outer Walls: <span class="tooltip">?<span class="tooltip-text">Whether to add outer wall decorations to paths</span></span></label>
+                            <select id="applyPathsOuterWalls-common" name="applyPathsOuterWalls-common" class="config-input" data-option="common" data-property="applyPathsOuterWalls">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="pathsOuterWallsTilesKey-common">Paths Outer Walls Tiles Key: <span class="tooltip">?<span class="tooltip-text">Key used to identify outer walls tiles in the tileset</span></span></label>
+                            <input type="text" id="pathsOuterWallsTilesKey-common" name="pathsOuterWallsTilesKey-common" class="config-input" data-option="common" data-property="pathsOuterWallsTilesKey" value="path">
+                        </div>
+                        <div class="config-item">
+                            <label for="cleanPathBorderTilesFromElements-common">Clean Path Border Tiles From Elements: <span class="tooltip">?<span class="tooltip-text">Whether to remove path border tiles that would overlap with elements</span></span></label>
+                            <select id="cleanPathBorderTilesFromElements-common" name="cleanPathBorderTilesFromElements-common" class="config-input" data-option="common" data-property="cleanPathBorderTilesFromElements">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="splitBordersLayerSuffix-common">Split Borders Layer Suffix: <span class="tooltip">?<span class="tooltip-text">String to append to the name of border layers (when split)</span></span></label>
+                            <input type="text" id="splitBordersLayerSuffix-common" name="splitBordersLayerSuffix-common" class="config-input" data-option="common" data-property="splitBordersLayerSuffix" value="">
+                        </div>
+                        <div class="config-item">
+                            <label for="removeGroundLayer-common">Remove Ground Layer: <span class="tooltip">?<span class="tooltip-text">Whether to remove the ground layer from the final map</span></span></label>
+                            <select id="removeGroundLayer-common" name="removeGroundLayer-common" class="config-input" data-option="common" data-property="removeGroundLayer">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="applyGroundAsPathTilePostProcess-common">Apply Ground As Path Tile Post Process: <span class="tooltip">?<span class="tooltip-text">Whether to convert path tiles to ground tiles after generation</span></span></label>
+                            <select id="applyGroundAsPathTilePostProcess-common" name="applyGroundAsPathTilePostProcess-common" class="config-input" data-option="common" data-property="applyGroundAsPathTilePostProcess">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="entryPosition-common">Entry Position: <span class="tooltip">?<span class="tooltip-text">Position for map entries (e.g., "top-middle", "down-left")</span></span></label>
+                            <input type="text" id="entryPosition-common" name="entryPosition-common" class="config-input" data-option="common" data-property="entryPosition" value="">
+                        </div>
+                        <div class="config-item">
+                            <label for="entryPositionFrom-common">Entry Position From: <span class="tooltip">?<span class="tooltip-text">Origin point for the entry position</span></span></label>
+                            <input type="text" id="entryPositionFrom-common" name="entryPositionFrom-common" class="config-input" data-option="common" data-property="entryPositionFrom" value="">
+                        </div>
+                        <div class="config-item">
+                            <label for="entryPositionSize-common">Entry Position Size: <span class="tooltip">?<span class="tooltip-text">Width of the entry point in tiles</span></span></label>
+                            <input type="number" id="entryPositionSize-common" name="entryPositionSize-common" class="config-input" data-option="common" data-property="entryPositionSize" value="0">
+                        </div>
+                        <div class="config-item">
+                            <label for="autoMergeLayersByKeys-common">Auto Merge Layers By Keys: <span class="tooltip">?<span class="tooltip-text">Layer keys to automatically merge (comma separated)</span></span></label>
+                            <input type="text" id="autoMergeLayersByKeys-common" name="autoMergeLayersByKeys-common" class="config-input" data-option="common" data-property="autoMergeLayersByKeys" value="">
+                        </div>
+                        <div class="config-item">
+                            <label for="mapCompressionLevel-common">Map Compression Level: <span class="tooltip">?<span class="tooltip-text">Compression level for the generated map file (0-9)</span></span></label>
+                            <input type="number" id="mapCompressionLevel-common" name="mapCompressionLevel-common" class="config-input" data-option="common" data-property="mapCompressionLevel" value="0" min="0" max="9">
+                        </div>
+                        <div class="config-item">
+                            <label for="writeCroppedElementsFiles-common">Write Cropped Elements Files: <span class="tooltip">?<span class="tooltip-text">Whether to write out cropped element files for debugging</span></span></label>
+                            <select id="writeCroppedElementsFiles-common" name="writeCroppedElementsFiles-common" class="config-input" data-option="common" data-property="writeCroppedElementsFiles">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="removeOptimizedMapFilesAfterGeneration-common">Remove Temp Files After Generation: <span class="tooltip">?<span class="tooltip-text">Whether to remove temporary optimized map files</span></span></label>
+                            <select id="removeOptimizedMapFilesAfterGeneration-common" name="removeOptimizedMapFilesAfterGeneration-common" class="config-input" data-option="common" data-property="removeOptimizedMapFilesAfterGeneration">
+                                <option value="true" selected>Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="automaticallyExtrudeMaps-common">Automatically Extrude Maps: <span class="tooltip">?<span class="tooltip-text">Whether to automatically extrude map edges</span></span></label>
                             <select id="automaticallyExtrudeMaps-common" name="automaticallyExtrudeMaps-common" class="config-input" data-option="common" data-property="automaticallyExtrudeMaps">
                                 <option value="1" selected>Yes</option>
                                 <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label for="debugPathsGrid-common">Debug Paths Grid: <span class="tooltip">?<span class="tooltip-text">Generate a debug file showing the path finding grid</span></span></label>
+                            <select id="debugPathsGrid-common" name="debugPathsGrid-common" class="config-input" data-option="common" data-property="debugPathsGrid">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
                             </select>
                         </div>
                     </div>

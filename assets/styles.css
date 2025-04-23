@@ -506,7 +506,7 @@
         }
     }
 
-    .config-container.active .config-grid {
+    .active .config-grid {
         display: grid;
     }
 
@@ -516,17 +516,6 @@
         padding-left: 18px;
         margin: 0;
         line-height: 2rem;
-    }
-
-    .config-container h4.clickable::before {
-        content: '+';
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-
-    .config-container.active h4.clickable::before {
-        content: '-';
     }
 
     .config-item:first-child {
@@ -591,6 +580,54 @@
 
     .common-config-container .config-grid .config-item:first-child {
         margin-top: 0;
+    }
+
+    .tooltip {
+        display: inline-block;
+        color: #3498db;
+        font-weight: bold;
+        margin-left: 4px;
+        cursor: pointer;
+    }
+
+    .tooltip .tooltip-text {
+        visibility: hidden;
+        width: 96%;
+        background-color: #333;
+        color: #fff;
+        text-align: left;
+        border-radius: 6px;
+        padding: 8px;
+        position: absolute;
+        z-index: 9999;
+        top: -30px;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 1.4;
+        pointer-events: none;
+    }
+
+    .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 0.95;
+    }
+
+    @media (max-width: 1200px) {
+        .tooltip .tooltip-text {
+            right: 125%;
+            left: auto;
+        }
+    }
+
+    .config-item label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
     }
 
 }
