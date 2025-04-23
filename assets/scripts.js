@@ -555,15 +555,4 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    let options = document.querySelectorAll('.set-sample-data');
-    if(generatorDataElement){
-        for(let option of options){
-            option.addEventListener('click', () => {
-                generatorDataElement.value = configurationsState[option.dataset.optionValue] || '';
-                updateGeneratorDataFromInputs();
-                configurationsState[option.dataset.optionValue] = generatorDataElement.value;
-            });
-        }
-    }
-
 });

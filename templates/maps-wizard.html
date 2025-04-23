@@ -21,14 +21,17 @@
                         <div class="maps-wizard-option-content mapsWizardAction-1-data">
                             <img data-toggle="modal" class="sample-image" src="/assets/sample-001.png" alt="Sample single map"/>
                             <p>
+                                In the examples above, all the tileset JSON files use the same tileset image (this is because we used the already optimized version of the tileset).<br/>
+                                Case disclaimer:
+                                In theory, it should also work if each element has its own image, but this still needs to be tested.<br/>
+                                For now, you can use the composite option to use multiple tileset images and those will be merged by the generator which use the Tile Map Optimizer.
+                            </p>
+                            <p>
                                 Generator Data example:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-object/map-data.json" target="_blank">
                                     map-data.json
                                 </a>
                             </p>
-                            <button type="button" class="button button-primary set-sample-data" data-option-value="elements-object-loader">
-                                Set Sample Data in "Generator Data"
-                            </button>
                             <p>
                                 Expected JSON files examples:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-object/house-001.json" target="_blank">
@@ -46,13 +49,6 @@
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-object/tilesheet.png" target="_blank">
                                     tilesheet.png
                                 </a>
-                            </p>
-                            <p>
-                                Note:<br/>
-                                In the examples above, all the tileset JSON files use the same tileset image (this is because we used the already optimized version of the tileset).<br/>
-                                Case disclaimer:
-                                In theory, it should also work if each element has its own image, but this still needs to be tested.<br/>
-                                For now, you can use the composite option to use multiple tileset images and those will be merged by the generator which use the Tile Map Optimizer.
                             </p>
                         </div>
                         <div class="config-container config-option-1">
@@ -158,14 +154,15 @@
                         <div class="maps-wizard-option-content mapsWizardAction-2-data">
                             <img data-toggle="modal" class="sample-image" src="/assets/sample-002.png" alt="Sample single map"/>
                             <p>
+                                In this case, as you can see, we have a single tile map JSON file which contains several tilesets with different images.<br/>
+                                All the original contents are 16x16 pixels, so you can see we set "factor: 2" in the sample params to run the optimizer and get tiles of 32x32 pixels in the result.
+                            </p>
+                            <p>
                                 Generator Data example:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/map-composite-data.json" target="_blank">
                                     map-composite-data.json
                                 </a>
                             </p>
-                            <button type="button" class="button button-primary set-sample-data" data-option-value="elements-composite-loader">
-                                Set Sample Data in "Generator Data"
-                            </button>
                             <p>
                                 Expected JSON files examples:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/reldens-town-composite.json" target="_blank">
@@ -192,11 +189,6 @@
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/inside.png" target="_blank">
                                     inside.png
                                 </a><br/>
-                            </p>
-                            <p>
-                                Note:<br/>
-                                In this case, as you can see, we have a single tile map JSON file which contains several tilesets with different images.<br/>
-                                All the original contents are 16x16 pixels, so you can see we set "factor: 2" in the sample params to run the optimizer and get tiles of 32x32 pixels in the result.
                             </p>
                         </div>
                         <div class="config-container config-option-2">
@@ -253,14 +245,14 @@
                         <div class="maps-wizard-option-content mapsWizardAction-3-data">
                             <img data-toggle="modal" class="sample-image" src="/assets/sample-002.png" alt="Sample single map"/>
                             <p>
+                                In this case we have the same structure as in the SINGLE import, but we include multiple map names in the provided data and use a different loader to create multiple maps at once.
+                            </p>
+                            <p>
                                 Generator Data example:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/map-composite-data.json" target="_blank">
                                     map-composite-data-with-names.json
                                 </a>
                             </p>
-                            <button type="button" class="button button-primary set-sample-data" data-option-value="multiple-by-loader">
-                                Set Sample Data in "Generator Data"
-                            </button>
                             <p>
                                 Expected JSON files examples:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/reldens-town-composite.json" target="_blank">
@@ -287,10 +279,6 @@
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/inside.png" target="_blank">
                                     inside.png
                                 </a><br/>
-                            </p>
-                            <p>
-                                Note:<br/>
-                                In this case we have the same structure as in the SINGLE import, but we include multiple map names in the provided data and use a different loader to create multiple maps at once.
                             </p>
                         </div>
                         <div class="config-container config-option-3">
@@ -351,14 +339,14 @@
                         <div class="maps-wizard-option-content mapsWizardAction-4-data">
                             <img data-toggle="modal" class="sample-image" src="/assets/sample-002.png" alt="Sample single map"/>
                             <p>
+                                In this case we have the same structure as in the SINGLE import, but we include multiple maps information and the association options in the provided data, but use a different loader to create multiple associated maps at once.
+                            </p>
+                            <p>
                                 Generator Data example:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/map-composite-data.json" target="_blank">
                                     map-composite-data-with-associations.json
                                 </a>
                             </p>
-                            <button type="button" class="button button-primary set-sample-data" data-option-value="multiple-with-association-by-loader">
-                                Set Sample Data in "Generator Data"
-                            </button>
                             <p>
                                 Expected JSON files examples:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/reldens-town-composite-with-associations.json" target="_blank">
@@ -388,10 +376,6 @@
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-composite/inside.png" target="_blank">
                                     inside.png
                                 </a><br/>
-                            </p>
-                            <p>
-                                Note:<br/>
-                                In this case we have the same structure as in the SINGLE import, but we include multiple maps information and the association options in the provided data, but use a different loader to create multiple associated maps at once.
                             </p>
                         </div>
                         <div class="config-container config-option-4">

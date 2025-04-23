@@ -399,6 +399,7 @@
                 overflow: unset;
                 list-style: none;
                 margin-bottom: 1rem;
+                cursor: pointer;
 
                 .main-option {
                     display: inline-block;
@@ -497,10 +498,11 @@
         background-color: #f9f9f9;
         border: 1px solid #ddd;
         border-radius: 4px;
+
         .config-grid {
             display: none;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1rem;
+            gap: 0.5rem;
         }
     }
 
@@ -513,6 +515,7 @@
         position: relative;
         padding-left: 18px;
         margin: 0;
+        line-height: 2rem;
     }
 
     .config-container h4.clickable::before {
@@ -526,6 +529,10 @@
         content: '-';
     }
 
+    .config-item:first-child {
+        margin-top: 1rem;
+    }
+
     .config-item {
         margin-bottom: 0.5rem;
 
@@ -535,9 +542,16 @@
             font-weight: 600;
         }
 
-        input, select, textarea {
+        select {
             width: 100%;
-            padding: 0.5rem;
+        }
+
+        input, textarea {
+            width: 96%;
+        }
+
+        input, select, textarea {
+            padding: 0.5rem 2%;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
@@ -545,7 +559,12 @@
         textarea {
             min-height: 80px;
             resize: vertical;
+            margin: 0;
         }
+    }
+
+    .generatorData {
+        resize: vertical;
     }
 
 }
