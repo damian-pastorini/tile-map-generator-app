@@ -19,5 +19,7 @@ node_modules/
 /.idea
 /test
 /dev
+**/generate-data/**/*.png
+**/generated-data/**/*.json
 **/generated/**/*.png
 **/generated/**/*.json
