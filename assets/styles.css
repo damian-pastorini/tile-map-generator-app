@@ -567,4 +567,30 @@
         resize: vertical;
     }
 
+    .common-config-container {
+        margin: 1rem 0;
+        padding: 1rem;
+        background-color: #e3f2fd;
+        border: 1px solid #bbdefb;
+        border-radius: 4px;
+    }
+
+    .common-config-container h4 {
+        display: block;
+        position: relative;
+        padding-left: 0;
+        margin: 0 0 0.5rem;
+        line-height: 2rem;
+    }
+
+    .common-config-container .config-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .common-config-container .config-grid .config-item:first-child {
+        margin-top: 0;
+    }
+
 }

@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let value = `; ${document.cookie}`;
         let parts = value.split(`; ${name}=`);
         if(2 === parts.length){
-            return parts.pop().split(';').shift()
+            return parts.pop().split(';').shift();
         }
     }
 
@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
             clonedCanvas.height = element.height;
             let ctx = clonedCanvas.getContext('2d');
             ctx.drawImage(element, 0, 0);
-            return clonedCanvas
+            return clonedCanvas;
         }
         return element.cloneNode(true);
     }
@@ -62,8 +62,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     mapCanvas.addEventListener('mousemove', (event) => {
                         let mouseX = event.offsetX;
                         let mouseY = event.offsetY;
-                        // @TODO - BETA - Refactor to only re-draw the highlight area not the entire grid.
-                        // highlightTile(mouseX, mouseY, data.tilewidth, data.tileheight, mapCanvasContext);
                         redrawWithHighlight(mapCanvasContext, mapCanvas.width, mapCanvas.height, data, mouseX, mouseY);
                     });
                 }
@@ -97,7 +95,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
                 let colIndex = index % width;
                 let rowIndex = Math.floor(index / width);
-                // adjusting for 0-based index:
                 let tileId = tileIndex - 1;
                 let sx = margin + (tileId % columns) * (tileWidth + spacing);
                 let sy = margin + Math.floor(tileId / columns) * (tileHeight + spacing);
@@ -154,7 +151,7 @@ window.addEventListener('DOMContentLoaded', () => {
         mapCanvas.classList.add('mapCanvas');
         appendOnElement.appendChild(mapCanvas);
         let sceneImages = mapSceneImages.split(',');
-        if (1 === sceneImages.length) {
+        if(1 === sceneImages.length){
             let tileset = new Image();
             // for now, we will only handle 1 image cases:
             tileset.src = '/assets/maps/' + sceneImages[0];
@@ -166,12 +163,12 @@ window.addEventListener('DOMContentLoaded', () => {
                     true,
                     tileClickCallback
                 );
-            }
+            };
             tileset.onerror = () => {
                 console.error('Error loading tileset image');
             };
         }
-        if (1 < sceneImages.length) {
+        if(1 < sceneImages.length){
             console.error('Maps link is not available for tilesets with multiple images for now.');
         }
     }
@@ -208,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 overlay.addEventListener('click', (e) => {
-                    if(e.target === overlay) {
+                    if(e.target === overlay){
                         document.body.removeChild(overlay);
                     }
                 });
@@ -230,14 +227,14 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-
-    // display notifications from query params:
     let notificationElement = document.querySelector('.notification');
     if(notificationElement){
         let closeNotificationElement = document.querySelector('.notification .close');
-        closeNotificationElement?.addEventListener('click', () => {
-            notificationElement.classList.remove('success', 'error');
-        });
+        if(closeNotificationElement){
+            closeNotificationElement.addEventListener('click', () => {
+                notificationElement.classList.remove('success', 'error');
+            });
+        }
         let queryParams = new URLSearchParams(location.search);
         let result = queryParams.get('result');
         if(!result){
@@ -256,8 +253,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // maps wizard functions:
+    let defaultCommonConfig = {
+        factor: 2,
+        mainPathSize: 3,
+        blockMapBorder: true,
+        freeSpaceTilesQuantity: 2,
+        variableTilesPercentage: 15.0,
+        collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
+        automaticallyExtrudeMaps: '1'
+    };
     let configurationsState = {
         'elements-object-loader': JSON.stringify({
+            common: JSON.parse(JSON.stringify(defaultCommonConfig)),
             tileSize: 32,
             tileSheetPath: 'tilesheet.png',
             tileSheetName: 'tilesheet.png',
@@ -273,12 +280,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 tree: 6
             },
             groundTile: 116,
-            mainPathSize: 3,
-            blockMapBorder: true,
-            freeSpaceTilesQuantity: 2,
-            variableTilesPercentage: 15.0,
             pathTile: 121,
-            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
             randomGroundTiles: [26, 27, 28, 29, 30, 36, 37, 38, 39, 50, 51, 52, 53],
             surroundingTiles: {
                 '-1,-1': 127,
@@ -303,33 +305,16 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }),
         'elements-composite-loader': JSON.stringify({
-            factor: 2,
-            mainPathSize: 3,
-            blockMapBorder: true,
-            freeSpaceTilesQuantity: 2,
-            variableTilesPercentage: 15,
-            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
+            common: JSON.parse(JSON.stringify(defaultCommonConfig)),
             compositeElementsFile: 'reldens-town-composite.json',
-            automaticallyExtrudeMaps: '1'
         }),
         'multiple-by-loader': JSON.stringify({
-            factor: 2,
-            mainPathSize: 3,
-            blockMapBorder: true,
-            freeSpaceTilesQuantity: 2,
-            variableTilesPercentage: 15,
-            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
+            common: JSON.parse(JSON.stringify(defaultCommonConfig)),
             mapNames: ['map-001', 'map-002', 'map-003'],
             compositeElementsFile: 'reldens-town-composite.json',
-            automaticallyExtrudeMaps: '1'
         }),
         'multiple-with-association-by-loader': JSON.stringify({
-            factor: 2,
-            mainPathSize: 3,
-            blockMapBorder: true,
-            freeSpaceTilesQuantity: 2,
-            variableTilesPercentage: 15,
-            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
+            common: JSON.parse(JSON.stringify(defaultCommonConfig)),
             mapsInformation: [
                 {mapName: 'town-001', mapTitle: 'Town 1'},
                 {mapName: 'town-002', mapTitle: 'Town 2'},
@@ -347,8 +332,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 applySurroundingPathTiles: false,
                 automaticallyExtrudeMaps: true
             },
-            compositeElementsFile: 'reldens-town-composite-with-associations.json',
-            automaticallyExtrudeMaps: '1'
+            compositeElementsFile: 'reldens-town-composite-with-associations.json'
         })
     };
 
@@ -361,6 +345,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     container.classList.remove('active');
                 }
                 event.currentTarget.parentNode.parentNode.classList.add('active');
+                let selectedOption = getSelectedOption();
+                updateCommonInputsFromOption(selectedOption);
                 updateGeneratorDataFromInputs();
             });
         }
@@ -386,12 +372,11 @@ window.addEventListener('DOMContentLoaded', () => {
         tileset.src = mapCanvas.dataset.imageKey;
         tileset.onload = () => {
             fetchMapFileAndDraw(mapCanvas.dataset.mapJson, tileset, mapCanvas);
-        }
+        };
         tileset.onerror = () => {
             console.error('Error loading tileset image');
         };
     }
-
     let configInputs = document.querySelectorAll('.config-input');
     if(configInputs){
         for(let input of configInputs){
@@ -400,9 +385,13 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-
+    let commonConfigContainer = document.querySelector('.common-config-container');
+    if(commonConfigContainer){
+        commonConfigContainer.classList.add('active');
+    }
     let selectedOption = getSelectedOption();
     if(selectedOption){
+        updateCommonInputsFromOption(selectedOption);
         updateGeneratorDataFromInputs(selectedOption);
     }
 
@@ -450,6 +439,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function updateConfigValue(input)
     {
         let propertyName = input.dataset.property;
+        let optionType = input.dataset.option;
         let propertyValue = processInputValue(input, propertyName, input.value);
         let generatorDataElement = document.querySelector('#generatorData');
         let currentData = {};
@@ -457,6 +447,21 @@ window.addEventListener('DOMContentLoaded', () => {
             currentData = JSON.parse(generatorDataElement.value || '{}');
         } catch(e){
             currentData = {};
+        }
+        let selectedOption = getSelectedOption();
+        try{
+            let optionData = JSON.parse(configurationsState[selectedOption] || '{}');
+            if('common' === optionType){
+                if(!optionData.common){
+                    optionData.common = {};
+                }
+                optionData.common[propertyName] = propertyValue;
+            } else{
+                optionData[propertyName] = propertyValue;
+            }
+            configurationsState[selectedOption] = JSON.stringify(optionData);
+        } catch(e){
+            console.error('Error updating configurations state for ' + selectedOption, e);
         }
         currentData[propertyName] = propertyValue;
         generatorDataElement.value = JSON.stringify(currentData, null, 2);
@@ -470,9 +475,24 @@ window.addEventListener('DOMContentLoaded', () => {
         if(!optionType){
             return;
         }
-        let inputs = document.querySelectorAll('.config-input[data-option="' + optionType + '"]');
         let generatorDataElement = document.querySelector('#generatorData');
-        let generatorData = JSON.parse(configurationsState[optionType]);
+        let generatorData = {};
+        try{
+            let optionData = JSON.parse(configurationsState[optionType] || '{}');
+            if(optionData.common){
+                for(let key in optionData.common){
+                    generatorData[key] = optionData.common[key];
+                }
+            }
+            for(let key in optionData){
+                if('common' !== key){
+                    generatorData[key] = optionData[key];
+                }
+            }
+        } catch(e){
+            console.error('Error parsing option configurations', e);
+        }
+        let inputs = document.querySelectorAll('.config-input[data-option="common"], .config-input[data-option="' + optionType + '"]');
         for(let input of inputs){
             let propertyName = input.dataset.property;
             generatorData[propertyName] = processInputValue(input, propertyName, input.value);
@@ -480,8 +500,28 @@ window.addEventListener('DOMContentLoaded', () => {
         generatorDataElement.value = JSON.stringify(generatorData, null, 2);
     }
 
-    function setInputValue(input, propertyName, propertyValue)
+    function updateCommonInputsFromOption(optionType)
     {
+        if(!optionType){
+            return;
+        }
+        try{
+            let optionData = JSON.parse(configurationsState[optionType] || '{}');
+            if(!optionData.common){
+                return;
+            }
+            let commonInputs = document.querySelectorAll('.config-input[data-option="common"]');
+            for(let input of commonInputs){
+                let propertyName = input.dataset.property;
+                if(optionData.common[propertyName] !== undefined){
+                    setInputValue(input, propertyName, optionData.common[propertyName]);
+                }
+            }
+        } catch(e){
+            console.error('Error updating common inputs for ' + optionType, e);
+        }
+    }
+    function setInputValue(input, propertyName, propertyValue){
         if(input.tagName === 'SELECT'){
             input.value = propertyValue.toString();
             return;
@@ -515,21 +555,38 @@ window.addEventListener('DOMContentLoaded', () => {
     function updateInputsFromGeneratorData()
     {
         let generatorDataElement = document.querySelector('#generatorData');
-        let optionType = getSelectedOption();
-        if(!generatorDataElement.value || !optionType){
+        let selectedOption = getSelectedOption();
+        if(!generatorDataElement.value || !selectedOption){
             return;
         }
         try{
             let jsonData = JSON.parse(generatorDataElement.value);
+            let optionData = {};
+            try{
+                optionData = JSON.parse(configurationsState[selectedOption] || '{}');
+                if(!optionData.common){
+                    optionData.common = JSON.parse(JSON.stringify(defaultCommonConfig));
+                }
+            } catch(e){
+                optionData = {common: {}};
+            }
             for(let propertyName in jsonData){
                 let propertyValue = jsonData[propertyName];
-                let inputSelector = '.config-input[data-option="'+optionType+'"][data-property="'+propertyName+'"]';
-                let input = document.querySelector(inputSelector);
-                if(input){
-                    setInputValue(input, propertyName, propertyValue);
+                let commonInputSelector = '.config-input[data-option="common"][data-property="'+propertyName+'"]';
+                let commonInput = document.querySelector(commonInputSelector);
+                if(commonInput){
+                    setInputValue(commonInput, propertyName, propertyValue);
+                    optionData.common[propertyName] = propertyValue;
+                    continue;
+                }
+                let optionInputSelector = '.config-input[data-option="'+selectedOption+'"][data-property="'+propertyName+'"]';
+                let optionInput = document.querySelector(optionInputSelector);
+                if(optionInput){
+                    setInputValue(optionInput, propertyName, propertyValue);
+                    optionData[propertyName] = propertyValue;
                 }
             }
-            configurationsState[optionType] = generatorDataElement.value;
+            configurationsState[selectedOption] = JSON.stringify(optionData);
         } catch(e){
             // console.error('Error parsing generator data JSON: ', e);
         }
@@ -542,12 +599,12 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    let configTitles = document.querySelectorAll('.config-container h4');
+    let configTitles = document.querySelectorAll('.config-container h4, .common-config-container h4');
     if(configTitles){
         for(let title of configTitles){
             title.classList.add('clickable');
             title.addEventListener('click', () => {
-                let container = title.closest('.config-container');
+                let container = title.closest('.config-container') || title.closest('.common-config-container');
                 if(container){
                     container.classList.toggle('active');
                 }
