@@ -23,7 +23,7 @@
                             <p>
                                 Generator Data example:<br/>
                                 <a href="https://raw.githubusercontent.com/damian-pastorini/tile-map-generator/refs/heads/master/examples/layer-elements-object/map-data.json" target="_blank">
-                                map-data.json
+                                    map-data.json
                                 </a>
                             </p>
                             <button type="button" class="button button-primary set-sample-data" data-option-value="elements-object-loader">
@@ -54,6 +54,98 @@
                                 In theory, it should also work if each element has its own image, but this still needs to be tested.<br/>
                                 For now, you can use the composite option to use multiple tileset images and those will be merged by the generator which use the Tile Map Optimizer.
                             </p>
+                        </div>
+                        <div class="config-container config-option-1">
+                            <h4>Configuration Options</h4>
+                            <div class="config-grid">
+                                <div class="config-item">
+                                    <label for="tileSize-1">Tile Size:</label>
+                                    <input type="number" id="tileSize-1" name="tileSize-1" class="config-input" data-option="elements-object-loader" data-property="tileSize" value="32">
+                                </div>
+                                <div class="config-item">
+                                    <label for="tileSheetPath-1">Tile Sheet Path:</label>
+                                    <input type="text" id="tileSheetPath-1" name="tileSheetPath-1" class="config-input" data-option="elements-object-loader" data-property="tileSheetPath" value="tilesheet.png">
+                                </div>
+                                <div class="config-item">
+                                    <label for="tileSheetName-1">Tile Sheet Name:</label>
+                                    <input type="text" id="tileSheetName-1" name="tileSheetName-1" class="config-input" data-option="elements-object-loader" data-property="tileSheetName" value="tilesheet.png">
+                                </div>
+                                <div class="config-item">
+                                    <label for="imageHeight-1">Image Height:</label>
+                                    <input type="number" id="imageHeight-1" name="imageHeight-1" class="config-input" data-option="elements-object-loader" data-property="imageHeight" value="578">
+                                </div>
+                                <div class="config-item">
+                                    <label for="imageWidth-1">Image Width:</label>
+                                    <input type="number" id="imageWidth-1" name="imageWidth-1" class="config-input" data-option="elements-object-loader" data-property="imageWidth" value="612">
+                                </div>
+                                <div class="config-item">
+                                    <label for="tileCount-1">Tile Count:</label>
+                                    <input type="number" id="tileCount-1" name="tileCount-1" class="config-input" data-option="elements-object-loader" data-property="tileCount" value="306">
+                                </div>
+                                <div class="config-item">
+                                    <label for="columns-1">Columns:</label>
+                                    <input type="number" id="columns-1" name="columns-1" class="config-input" data-option="elements-object-loader" data-property="columns" value="18">
+                                </div>
+                                <div class="config-item">
+                                    <label for="margin-1">Margin:</label>
+                                    <input type="number" id="margin-1" name="margin-1" class="config-input" data-option="elements-object-loader" data-property="margin" value="1">
+                                </div>
+                                <div class="config-item">
+                                    <label for="spacing-1">Spacing:</label>
+                                    <input type="number" id="spacing-1" name="spacing-1" class="config-input" data-option="elements-object-loader" data-property="spacing" value="2">
+                                </div>
+                                <div class="config-item">
+                                    <label for="groundTile-1">Ground Tile:</label>
+                                    <input type="number" id="groundTile-1" name="groundTile-1" class="config-input" data-option="elements-object-loader" data-property="groundTile" value="116">
+                                </div>
+                                <div class="config-item">
+                                    <label for="mainPathSize-1">Main Path Size:</label>
+                                    <input type="number" id="mainPathSize-1" name="mainPathSize-1" class="config-input" data-option="elements-object-loader" data-property="mainPathSize" value="3">
+                                </div>
+                                <div class="config-item">
+                                    <label for="blockMapBorder-1">Block Map Border:</label>
+                                    <select id="blockMapBorder-1" name="blockMapBorder-1" class="config-input" data-option="elements-object-loader" data-property="blockMapBorder">
+                                        <option value="true" selected>Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div class="config-item">
+                                    <label for="freeSpaceTilesQuantity-1">Free Space Tiles Quantity:</label>
+                                    <input type="number" id="freeSpaceTilesQuantity-1" name="freeSpaceTilesQuantity-1" class="config-input" data-option="elements-object-loader" data-property="freeSpaceTilesQuantity" value="2">
+                                </div>
+                                <div class="config-item">
+                                    <label for="variableTilesPercentage-1">Variable Tiles Percentage:</label>
+                                    <input type="number" id="variableTilesPercentage-1" name="variableTilesPercentage-1" class="config-input" data-option="elements-object-loader" data-property="variableTilesPercentage" value="15.0">
+                                </div>
+                                <div class="config-item">
+                                    <label for="pathTile-1">Path Tile:</label>
+                                    <input type="number" id="pathTile-1" name="pathTile-1" class="config-input" data-option="elements-object-loader" data-property="pathTile" value="121">
+                                </div>
+                                <div class="config-item">
+                                    <label for="collisionLayersForPaths-1">Collision Layers For Paths (comma separated):</label>
+                                    <input type="text" id="collisionLayersForPaths-1" name="collisionLayersForPaths-1" class="config-input" data-option="elements-object-loader" data-property="collisionLayersForPaths" value="change-points,collisions,tree-base">
+                                </div>
+                                <div class="config-item">
+                                    <label for="randomGroundTiles-1">Random Ground Tiles (comma separated):</label>
+                                    <input type="text" id="randomGroundTiles-1" name="randomGroundTiles-1" class="config-input" data-option="elements-object-loader" data-property="randomGroundTiles" value="26,27,28,29,30,36,37,38,39,50,51,52,53">
+                                </div>
+                                <div class="config-item">
+                                    <label for="elementsQuantity-1">Elements Quantity (JSON):</label>
+                                    <textarea id="elementsQuantity-1" name="elementsQuantity-1" class="config-input" data-option="elements-object-loader" data-property="elementsQuantity" rows="4">{"house1": 3, "house2": 2, "tree": 6}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="surroundingTiles-1">Surrounding Tiles (JSON):</label>
+                                    <textarea id="surroundingTiles-1" name="surroundingTiles-1" class="config-input" data-option="elements-object-loader" data-property="surroundingTiles" rows="4">{"-1,-1": 127, "-1,0": 124, "-1,1": 130, "0,-1": 126, "0,1": 129, "1,-1": 132, "1,0": 131, "1,1": 133}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="corners-1">Corners (JSON):</label>
+                                    <textarea id="corners-1" name="corners-1" class="config-input" data-option="elements-object-loader" data-property="corners" rows="4">{"-1,-1": 285, "-1,1": 284, "1,-1": 283, "1,1": 282}</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="layerElementsFiles-1">Layer Elements Files (JSON):</label>
+                                    <textarea id="layerElementsFiles-1" name="layerElementsFiles-1" class="config-input" data-option="elements-object-loader" data-property="layerElementsFiles" rows="4">{"house1": "house-001.json", "house2": "house-002.json", "tree": "tree.json"}</textarea>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li class="wizard-option-container">
@@ -107,6 +199,49 @@
                                 All the original contents are 16x16 pixels, so you can see we set "factor: 2" in the sample params to run the optimizer and get tiles of 32x32 pixels in the result.
                             </p>
                         </div>
+                        <div class="config-container config-option-2">
+                            <h4>Configuration Options</h4>
+                            <div class="config-grid">
+                                <div class="config-item">
+                                    <label for="factor-2">Factor:</label>
+                                    <input type="number" id="factor-2" name="factor-2" class="config-input" data-option="elements-composite-loader" data-property="factor" value="2">
+                                </div>
+                                <div class="config-item">
+                                    <label for="mainPathSize-2">Main Path Size:</label>
+                                    <input type="number" id="mainPathSize-2" name="mainPathSize-2" class="config-input" data-option="elements-composite-loader" data-property="mainPathSize" value="3">
+                                </div>
+                                <div class="config-item">
+                                    <label for="blockMapBorder-2">Block Map Border:</label>
+                                    <select id="blockMapBorder-2" name="blockMapBorder-2" class="config-input" data-option="elements-composite-loader" data-property="blockMapBorder">
+                                        <option value="true" selected>Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div class="config-item">
+                                    <label for="freeSpaceTilesQuantity-2">Free Space Tiles Quantity:</label>
+                                    <input type="number" id="freeSpaceTilesQuantity-2" name="freeSpaceTilesQuantity-2" class="config-input" data-option="elements-composite-loader" data-property="freeSpaceTilesQuantity" value="2">
+                                </div>
+                                <div class="config-item">
+                                    <label for="variableTilesPercentage-2">Variable Tiles Percentage:</label>
+                                    <input type="number" id="variableTilesPercentage-2" name="variableTilesPercentage-2" class="config-input" data-option="elements-composite-loader" data-property="variableTilesPercentage" value="15">
+                                </div>
+                                <div class="config-item">
+                                    <label for="collisionLayersForPaths-2">Collision Layers For Paths (comma separated):</label>
+                                    <input type="text" id="collisionLayersForPaths-2" name="collisionLayersForPaths-2" class="config-input" data-option="elements-composite-loader" data-property="collisionLayersForPaths" value="change-points,collisions,tree-base">
+                                </div>
+                                <div class="config-item">
+                                    <label for="compositeElementsFile-2">Composite Elements File:</label>
+                                    <input type="text" id="compositeElementsFile-2" name="compositeElementsFile-2" class="config-input" data-option="elements-composite-loader" data-property="compositeElementsFile" value="reldens-town-composite.json">
+                                </div>
+                                <div class="config-item">
+                                    <label for="automaticallyExtrudeMaps-2">Automatically Extrude Maps:</label>
+                                    <select id="automaticallyExtrudeMaps-2" name="automaticallyExtrudeMaps-2" class="config-input" data-option="elements-composite-loader" data-property="automaticallyExtrudeMaps">
+                                        <option value="1" selected>Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li class="wizard-option-container">
                         <div class="checkbox-container">
@@ -157,6 +292,53 @@
                                 Note:<br/>
                                 In this case we have the same structure as in the SINGLE import, but we include multiple map names in the provided data and use a different loader to create multiple maps at once.
                             </p>
+                        </div>
+                        <div class="config-container config-option-3">
+                            <h4>Configuration Options</h4>
+                            <div class="config-grid">
+                                <div class="config-item">
+                                    <label for="factor-3">Factor:</label>
+                                    <input type="number" id="factor-3" name="factor-3" class="config-input" data-option="multiple-by-loader" data-property="factor" value="2">
+                                </div>
+                                <div class="config-item">
+                                    <label for="mainPathSize-3">Main Path Size:</label>
+                                    <input type="number" id="mainPathSize-3" name="mainPathSize-3" class="config-input" data-option="multiple-by-loader" data-property="mainPathSize" value="3">
+                                </div>
+                                <div class="config-item">
+                                    <label for="blockMapBorder-3">Block Map Border:</label>
+                                    <select id="blockMapBorder-3" name="blockMapBorder-3" class="config-input" data-option="multiple-by-loader" data-property="blockMapBorder">
+                                        <option value="true" selected>Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div class="config-item">
+                                    <label for="freeSpaceTilesQuantity-3">Free Space Tiles Quantity:</label>
+                                    <input type="number" id="freeSpaceTilesQuantity-3" name="freeSpaceTilesQuantity-3" class="config-input" data-option="multiple-by-loader" data-property="freeSpaceTilesQuantity" value="2">
+                                </div>
+                                <div class="config-item">
+                                    <label for="variableTilesPercentage-3">Variable Tiles Percentage:</label>
+                                    <input type="number" id="variableTilesPercentage-3" name="variableTilesPercentage-3" class="config-input" data-option="multiple-by-loader" data-property="variableTilesPercentage" value="15">
+                                </div>
+                                <div class="config-item">
+                                    <label for="collisionLayersForPaths-3">Collision Layers For Paths (comma separated):</label>
+                                    <input type="text" id="collisionLayersForPaths-3" name="collisionLayersForPaths-3" class="config-input" data-option="multiple-by-loader" data-property="collisionLayersForPaths" value="change-points,collisions,tree-base">
+                                </div>
+                                <div class="config-item">
+                                    <label for="mapNames-3">Map Names (comma separated):</label>
+                                    <input type="text" id="mapNames-3" name="mapNames-3" class="config-input" data-option="multiple-by-loader" data-property="mapNames" value="map-001,map-002,map-003">
+                                </div>
+                                <div class="config-item">
+                                    <label for="compositeElementsFile-3">Composite Elements File:</label>
+                                    <input type="text" id="compositeElementsFile-3" name="compositeElementsFile-3" class="config-input" data-option="multiple-by-loader" data-property="compositeElementsFile" value="reldens-town-composite.json">
+                                </div>
+                                <div class="config-item">
+                                    <label for="automaticallyExtrudeMaps-3">Automatically Extrude Maps:</label>
+                                    <select id="automaticallyExtrudeMaps-3" name="automaticallyExtrudeMaps-3" class="config-input" data-option="multiple-by-loader" data-property="automaticallyExtrudeMaps">
+                                        <option value="1" selected>Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li class="wizard-option-container">
@@ -212,6 +394,57 @@
                                 In this case we have the same structure as in the SINGLE import, but we include multiple maps information and the association options in the provided data, but use a different loader to create multiple associated maps at once.
                             </p>
                         </div>
+                        <div class="config-container config-option-4">
+                            <h4>Configuration Options</h4>
+                            <div class="config-grid">
+                                <div class="config-item">
+                                    <label for="factor-4">Factor:</label>
+                                    <input type="number" id="factor-4" name="factor-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="factor" value="2">
+                                </div>
+                                <div class="config-item">
+                                    <label for="mainPathSize-4">Main Path Size:</label>
+                                    <input type="number" id="mainPathSize-4" name="mainPathSize-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="mainPathSize" value="3">
+                                </div>
+                                <div class="config-item">
+                                    <label for="blockMapBorder-4">Block Map Border:</label>
+                                    <select id="blockMapBorder-4" name="blockMapBorder-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="blockMapBorder">
+                                        <option value="true" selected>Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div class="config-item">
+                                    <label for="freeSpaceTilesQuantity-4">Free Space Tiles Quantity:</label>
+                                    <input type="number" id="freeSpaceTilesQuantity-4" name="freeSpaceTilesQuantity-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="freeSpaceTilesQuantity" value="2">
+                                </div>
+                                <div class="config-item">
+                                    <label for="variableTilesPercentage-4">Variable Tiles Percentage:</label>
+                                    <input type="number" id="variableTilesPercentage-4" name="variableTilesPercentage-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="variableTilesPercentage" value="15">
+                                </div>
+                                <div class="config-item">
+                                    <label for="collisionLayersForPaths-4">Collision Layers For Paths (comma separated):</label>
+                                    <input type="text" id="collisionLayersForPaths-4" name="collisionLayersForPaths-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="collisionLayersForPaths" value="change-points,collisions,tree-base">
+                                </div>
+                                <div class="config-item">
+                                    <label for="compositeElementsFile-4">Composite Elements File:</label>
+                                    <input type="text" id="compositeElementsFile-4" name="compositeElementsFile-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="compositeElementsFile" value="reldens-town-composite-with-associations.json">
+                                </div>
+                                <div class="config-item">
+                                    <label for="automaticallyExtrudeMaps-4">Automatically Extrude Maps:</label>
+                                    <select id="automaticallyExtrudeMaps-4" name="automaticallyExtrudeMaps-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="automaticallyExtrudeMaps">
+                                        <option value="1" selected>Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <div class="config-item">
+                                    <label for="mapsInformation-4">Maps Information (JSON):</label>
+                                    <textarea id="mapsInformation-4" name="mapsInformation-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="mapsInformation" rows="4">[{"mapName": "town-001", "mapTitle": "Town 1"}, {"mapName": "town-002", "mapTitle": "Town 2"}, {"mapName": "town-003", "mapTitle": "Town 3"}, {"mapName": "town-004", "mapTitle": "Town 4"}]</textarea>
+                                </div>
+                                <div class="config-item">
+                                    <label for="associationsProperties-4">Associations Properties (JSON):</label>
+                                    <textarea id="associationsProperties-4" name="associationsProperties-4" class="config-input" data-option="multiple-with-association-by-loader" data-property="associationsProperties" rows="4">{"generateElementsPath": false, "blockMapBorder": true, "freeSpaceTilesQuantity": 0, "variableTilesPercentage": 0, "placeElementsOrder": "inOrder", "orderElementsBySize": false, "randomizeQuantities": true, "applySurroundingPathTiles": false, "automaticallyExtrudeMaps": true}</textarea>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
                 <hr/>
@@ -219,7 +452,7 @@
                     <p class="alert"><strong>IMPORTANT: All uploaded files are deleted from the server every hour.</strong></p>
                     <p>Note: Because of this hourly cleanup, you can submit the form again within the same hour without re‑uploading your files.
                         <br/>If you want to use the sample generator data, you still need to download the example files for each case and attach them in the form below.
-                        <br/>After the hour resets, you’ll need to upload the files again.
+                        <br/>After the hour resets, you'll need to upload the files again.
                     </p>
                     <div class="input-box">
                         <label for="generatorImages">Images</label>
@@ -241,111 +474,3 @@
         </form>
     </div>
 </div>
-<script type="text/javascript">
-    let data = {
-        'elements-object-loader': JSON.stringify({
-            tileSize: 32,
-            tileSheetPath: 'tilesheet.png',
-            tileSheetName: 'tilesheet.png',
-            imageHeight: 578,
-            imageWidth: 612,
-            tileCount: 306,
-            columns: 18,
-            margin: 1,
-            spacing: 2,
-            elementsQuantity: {
-                house1: 3,
-                house2: 2,
-                tree: 6
-            },
-            groundTile: 116,
-            mainPathSize: 3,
-            blockMapBorder: true,
-            freeSpaceTilesQuantity: 2,
-            variableTilesPercentage: 15.0,
-            pathTile: 121,
-            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
-            randomGroundTiles: [26, 27, 28, 29, 30, 36, 37, 38, 39, 50, 51, 52, 53],
-            surroundingTiles: {
-                '-1,-1': 127,
-                '-1,0': 124,
-                '-1,1': 130,
-                '0,-1': 126,
-                '0,1': 129,
-                '1,-1': 132,
-                '1,0': 131,
-                '1,1': 133
-            },
-            corners: {
-                '-1,-1': 285,
-                '-1,1': 284,
-                '1,-1': 283,
-                '1,1': 282
-            },
-            layerElementsFiles: {
-                house1: 'house-001.json',
-                house2: 'house-002.json',
-                tree: 'tree.json'
-            }
-        }),
-        'elements-composite-loader': JSON.stringify({
-            factor: 2,
-            mainPathSize: 3,
-            blockMapBorder: true,
-            freeSpaceTilesQuantity: 2,
-            variableTilesPercentage: 15,
-            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
-            compositeElementsFile: 'reldens-town-composite.json',
-            automaticallyExtrudeMaps: '1'
-        }),
-        'multiple-by-loader': JSON.stringify({
-            factor: 2,
-            mainPathSize: 3,
-            blockMapBorder: true,
-            freeSpaceTilesQuantity: 2,
-            variableTilesPercentage: 15,
-            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
-            mapNames: ['map-001', 'map-002', 'map-003'],
-            compositeElementsFile: 'reldens-town-composite.json',
-            automaticallyExtrudeMaps: '1'
-        }),
-        'multiple-with-association-by-loader': JSON.stringify({
-            factor: 2,
-            mainPathSize: 3,
-            blockMapBorder: true,
-            freeSpaceTilesQuantity: 2,
-            variableTilesPercentage: 15,
-            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
-            mapsInformation: [
-                {mapName: 'town-001', mapTitle: 'Town 1'},
-                {mapName: 'town-002', mapTitle: 'Town 2'},
-                {mapName: 'town-003', mapTitle: 'Town 3'},
-                {mapName: 'town-004', mapTitle: 'Town 4'}
-            ],
-            associationsProperties: {
-                generateElementsPath: false,
-                blockMapBorder: true,
-                freeSpaceTilesQuantity: 0,
-                variableTilesPercentage: 0,
-                placeElementsOrder: 'inOrder',
-                orderElementsBySize: false,
-                randomizeQuantities: true,
-                applySurroundingPathTiles: false,
-                automaticallyExtrudeMaps: true
-            },
-            compositeElementsFile: 'reldens-town-composite-with-associations.json',
-            automaticallyExtrudeMaps: '1'
-        })
-    };
-
-    let options = document.querySelectorAll('.set-sample-data');
-    let generatorDataElement = document.querySelector('.generatorData');
-    if(generatorDataElement){
-        for(let option of options){
-            option.addEventListener('click', () => {
-                generatorDataElement.value = data[option.dataset.optionValue] || '';
-            });
-        }
-    }
-
-</script>

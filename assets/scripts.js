@@ -256,15 +256,112 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // maps wizard functions:
+    let configurationsState = {
+        'elements-object-loader': JSON.stringify({
+            tileSize: 32,
+            tileSheetPath: 'tilesheet.png',
+            tileSheetName: 'tilesheet.png',
+            imageHeight: 578,
+            imageWidth: 612,
+            tileCount: 306,
+            columns: 18,
+            margin: 1,
+            spacing: 2,
+            elementsQuantity: {
+                house1: 3,
+                house2: 2,
+                tree: 6
+            },
+            groundTile: 116,
+            mainPathSize: 3,
+            blockMapBorder: true,
+            freeSpaceTilesQuantity: 2,
+            variableTilesPercentage: 15.0,
+            pathTile: 121,
+            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
+            randomGroundTiles: [26, 27, 28, 29, 30, 36, 37, 38, 39, 50, 51, 52, 53],
+            surroundingTiles: {
+                '-1,-1': 127,
+                '-1,0': 124,
+                '-1,1': 130,
+                '0,-1': 126,
+                '0,1': 129,
+                '1,-1': 132,
+                '1,0': 131,
+                '1,1': 133
+            },
+            corners: {
+                '-1,-1': 285,
+                '-1,1': 284,
+                '1,-1': 283,
+                '1,1': 282
+            },
+            layerElementsFiles: {
+                house1: 'house-001.json',
+                house2: 'house-002.json',
+                tree: 'tree.json'
+            }
+        }),
+        'elements-composite-loader': JSON.stringify({
+            factor: 2,
+            mainPathSize: 3,
+            blockMapBorder: true,
+            freeSpaceTilesQuantity: 2,
+            variableTilesPercentage: 15,
+            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
+            compositeElementsFile: 'reldens-town-composite.json',
+            automaticallyExtrudeMaps: '1'
+        }),
+        'multiple-by-loader': JSON.stringify({
+            factor: 2,
+            mainPathSize: 3,
+            blockMapBorder: true,
+            freeSpaceTilesQuantity: 2,
+            variableTilesPercentage: 15,
+            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
+            mapNames: ['map-001', 'map-002', 'map-003'],
+            compositeElementsFile: 'reldens-town-composite.json',
+            automaticallyExtrudeMaps: '1'
+        }),
+        'multiple-with-association-by-loader': JSON.stringify({
+            factor: 2,
+            mainPathSize: 3,
+            blockMapBorder: true,
+            freeSpaceTilesQuantity: 2,
+            variableTilesPercentage: 15,
+            collisionLayersForPaths: ['change-points', 'collisions', 'tree-base'],
+            mapsInformation: [
+                {mapName: 'town-001', mapTitle: 'Town 1'},
+                {mapName: 'town-002', mapTitle: 'Town 2'},
+                {mapName: 'town-003', mapTitle: 'Town 3'},
+                {mapName: 'town-004', mapTitle: 'Town 4'}
+            ],
+            associationsProperties: {
+                generateElementsPath: false,
+                blockMapBorder: true,
+                freeSpaceTilesQuantity: 0,
+                variableTilesPercentage: 0,
+                placeElementsOrder: 'inOrder',
+                orderElementsBySize: false,
+                randomizeQuantities: true,
+                applySurroundingPathTiles: false,
+                automaticallyExtrudeMaps: true
+            },
+            compositeElementsFile: 'reldens-town-composite-with-associations.json',
+            automaticallyExtrudeMaps: '1'
+        })
+    };
+
     let mapsWizardsOptions = document.querySelectorAll('.maps-wizard-form .map-wizard-option.with-state');
     if(mapsWizardsOptions){
         for(let option of mapsWizardsOptions){
-            option.addEventListener('click', (event) => {
+            option.addEventListener('change', (event) => {
                 let wizardOptionsContainer = document.querySelectorAll('.wizard-option-container');
                 for(let container of wizardOptionsContainer){
                     container.classList.remove('active');
                 }
                 event.currentTarget.parentNode.parentNode.classList.add('active');
+                updateGeneratorDataFromInputs();
             });
         }
     }
@@ -293,6 +390,180 @@ window.addEventListener('DOMContentLoaded', () => {
         tileset.onerror = () => {
             console.error('Error loading tileset image');
         };
+    }
+
+    let configInputs = document.querySelectorAll('.config-input');
+    if(configInputs){
+        for(let input of configInputs){
+            input.addEventListener('change', () => {
+                updateConfigValue(input);
+            });
+        }
+    }
+
+    let selectedOption = getSelectedOption();
+    if(selectedOption){
+        updateGeneratorDataFromInputs(selectedOption);
+    }
+
+    function getSelectedOption()
+    {
+        let selectedOption = document.querySelector('input[name="mapsWizardAction"]:checked');
+        if(!selectedOption){
+            return '';
+        }
+        return selectedOption.value;
+    }
+
+    function processInputValue(input, propertyName, propertyValue)
+    {
+        if('SELECT' === input.tagName && ('true' === propertyValue || 'false' === propertyValue)){
+            return 'true' === propertyValue;
+        }
+        if(input.type === 'number'){
+            return Number(propertyValue);
+        }
+        if(input.tagName === 'TEXTAREA'){
+            try{
+                return JSON.parse(propertyValue);
+            } catch(e){
+                console.error('Invalid JSON value for ' + propertyName);
+                return propertyValue;
+            }
+        }
+        if(
+            propertyName === 'collisionLayersForPaths'
+            || propertyName === 'mapNames'
+            || propertyName === 'randomGroundTiles'
+        ){
+            if(typeof propertyValue === 'string'){
+                let values = propertyValue.split(',').map(item => item.trim());
+                if(propertyName === 'randomGroundTiles'){
+                    return values.map(item => Number(item));
+                }
+                return values;
+            }
+        }
+        return propertyValue;
+    }
+
+    function updateConfigValue(input)
+    {
+        let propertyName = input.dataset.property;
+        let propertyValue = processInputValue(input, propertyName, input.value);
+        let generatorDataElement = document.querySelector('#generatorData');
+        let currentData = {};
+        try{
+            currentData = JSON.parse(generatorDataElement.value || '{}');
+        } catch(e){
+            currentData = {};
+        }
+        currentData[propertyName] = propertyValue;
+        generatorDataElement.value = JSON.stringify(currentData, null, 2);
+    }
+
+    function updateGeneratorDataFromInputs(optionType)
+    {
+        if(!optionType){
+            optionType = getSelectedOption();
+        }
+        if(!optionType){
+            return;
+        }
+        let inputs = document.querySelectorAll('.config-input[data-option="' + optionType + '"]');
+        let generatorDataElement = document.querySelector('#generatorData');
+        let generatorData = JSON.parse(configurationsState[optionType]);
+        for(let input of inputs){
+            let propertyName = input.dataset.property;
+            generatorData[propertyName] = processInputValue(input, propertyName, input.value);
+        }
+        generatorDataElement.value = JSON.stringify(generatorData, null, 2);
+    }
+
+    function setInputValue(input, propertyName, propertyValue)
+    {
+        if(input.tagName === 'SELECT'){
+            input.value = propertyValue.toString();
+            return;
+        }
+        if(input.tagName === 'TEXTAREA'){
+            if(typeof propertyValue === 'object'){
+                input.value = JSON.stringify(propertyValue, null, 2);
+                return;
+            }
+            input.value = propertyValue;
+            return;
+        }
+        if(input.type === 'number'){
+            input.value = propertyValue;
+            return;
+        }
+        if(
+            Array.isArray(propertyValue)
+            && (
+                propertyName === 'collisionLayersForPaths'
+                || propertyName === 'mapNames'
+                || propertyName === 'randomGroundTiles'
+            )
+        ){
+            input.value = propertyValue.join(',');
+            return;
+        }
+        input.value = propertyValue;
+    }
+
+    function updateInputsFromGeneratorData()
+    {
+        let generatorDataElement = document.querySelector('#generatorData');
+        let optionType = getSelectedOption();
+        if(!generatorDataElement.value || !optionType){
+            return;
+        }
+        try{
+            let jsonData = JSON.parse(generatorDataElement.value);
+            for(let propertyName in jsonData){
+                let propertyValue = jsonData[propertyName];
+                let inputSelector = '.config-input[data-option="'+optionType+'"][data-property="'+propertyName+'"]';
+                let input = document.querySelector(inputSelector);
+                if(input){
+                    setInputValue(input, propertyName, propertyValue);
+                }
+            }
+            configurationsState[optionType] = generatorDataElement.value;
+        } catch(e){
+            // console.error('Error parsing generator data JSON: ', e);
+        }
+    }
+
+    let generatorDataElement = document.querySelector('#generatorData');
+    if(generatorDataElement){
+        generatorDataElement.addEventListener('input', () => {
+            updateInputsFromGeneratorData();
+        });
+    }
+
+    let configTitles = document.querySelectorAll('.config-container h4');
+    if(configTitles){
+        for(let title of configTitles){
+            title.classList.add('clickable');
+            title.addEventListener('click', () => {
+                let container = title.closest('.config-container');
+                if(container){
+                    container.classList.toggle('active');
+                }
+            });
+        }
+    }
+
+    let options = document.querySelectorAll('.set-sample-data');
+    if(generatorDataElement){
+        for(let option of options){
+            option.addEventListener('click', () => {
+                generatorDataElement.value = configurationsState[option.dataset.optionValue] || '';
+                updateGeneratorDataFromInputs();
+                configurationsState[option.dataset.optionValue] = generatorDataElement.value;
+            });
+        }
     }
 
 });

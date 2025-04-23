@@ -2,7 +2,7 @@
  * Reldens - Tile Map Generator App
  */
 
-.reldens-admin-panel {
+.reldens-tile-map-generator-app {
     font-family: Verdana, Geneva, sans-serif;
     background-color: #ecf0f1;
     margin: 0;
@@ -489,6 +489,63 @@
         width: 100%;
         max-height: 500px;
         overflow: auto;
+    }
+
+    .config-container {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        .config-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+    }
+
+    .config-container.active .config-grid {
+        display: grid;
+    }
+
+    .config-container h4.clickable {
+        cursor: pointer;
+        position: relative;
+        padding-left: 18px;
+        margin: 0;
+    }
+
+    .config-container h4.clickable::before {
+        content: '+';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .config-container.active h4.clickable::before {
+        content: '-';
+    }
+
+    .config-item {
+        margin-bottom: 0.5rem;
+
+        label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
     }
 
 }
