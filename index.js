@@ -30,7 +30,11 @@ class ReldensTileMapGeneratorApp
         await this.appServerFactory.enableServeHome(this.app, async () => {
             return this.mapsWizardManager.contents['mapsWizard'];
         });
-        await this.mapsWizardManager.setupRoutes(this.app);
+        await this.mapsWizardManager.setupRoutes(this.app, this.appServerFactory.rateLimit({
+            windowMs: 60 * 60 * 1000,
+            max: 10,
+            message: 'Too many map generation requests, please try again later'
+        }));
         await this.appServer.listen(8085);
         this.activateFilesRemoval();
     }
