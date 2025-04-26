@@ -10,7 +10,7 @@
         "start": "node ."
     },
     "dependencies": {
-        "@reldens/server-utils": "^0.8.0",
+        "@reldens/server-utils": "^0.10.0",
         "@reldens/tile-map-generator": "^0.18.0",
         "@reldens/utils": "^0.40.0",
         "mustache": "4.2.0"
