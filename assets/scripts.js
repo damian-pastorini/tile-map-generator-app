@@ -380,6 +380,7 @@ window.addEventListener('DOMContentLoaded', () => {
             console.error('Error loading tileset image');
         };
     }
+
     let configInputs = document.querySelectorAll('.config-input');
     if(configInputs){
         for(let input of configInputs){
@@ -388,10 +389,7 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-    let commonConfigContainer = document.querySelector('.common-config-container');
-    if(commonConfigContainer){
-        commonConfigContainer.classList.add('active');
-    }
+
     let selectedOption = getSelectedOption();
     if(selectedOption){
         updateCommonInputsFromOption(selectedOption);
@@ -600,6 +598,18 @@ window.addEventListener('DOMContentLoaded', () => {
         generatorDataElement.addEventListener('input', () => {
             updateInputsFromGeneratorData();
         });
+    }
+
+    let configTitles = document.querySelectorAll('.config-container h4, .common-config-container h4');
+    if(configTitles){
+        for(let title of configTitles){
+            title.addEventListener('click', () => {
+                let container = title.closest('.config-container') || title.closest('.common-config-container');
+                if(container){
+                    container.classList.toggle('active');
+                }
+            });
+        }
     }
 
 });

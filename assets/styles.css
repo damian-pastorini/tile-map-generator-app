@@ -506,8 +506,10 @@
         }
     }
 
-    .active .config-grid {
-        display: grid;
+    .config-container.active {
+        .config-grid {
+            display: grid;
+        }
     }
 
     .config-container h4.clickable {
@@ -516,6 +518,24 @@
         padding-left: 18px;
         margin: 0;
         line-height: 2rem;
+    }
+
+    .common-config-container h4.clickable::before,
+    .config-container h4.clickable::before {
+        content: '+';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .common-config-container.active h4.clickable::before{
+        content: '-';
+        left: 4px;
+    }
+
+    .config-container.active h4.clickable::before {
+        content: '-';
+        left: 2px;
     }
 
     .config-item:first-child {
@@ -567,19 +587,30 @@
     .common-config-container h4 {
         display: block;
         position: relative;
-        padding-left: 0;
-        margin: 0 0 0.5rem;
+        padding-left: 1.5rem;
+        margin: 0;
         line-height: 2rem;
+        font-size: 1.2rem;
     }
 
     .common-config-container .config-grid {
-        display: grid;
+        display: none;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 0.5rem;
     }
 
     .common-config-container .config-grid .config-item:first-child {
         margin-top: 0;
+    }
+
+    .common-config-container.active {
+        h4 {
+            margin-bottom: 2rem;
+        }
+
+        .config-grid {
+            display: grid;
+        }
     }
 
     .tooltip {
